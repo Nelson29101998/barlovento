@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../disenoMejor/bootstrap/css/bootstrap.min.css">
+    <script src="../../disenoMejor/bootstrap/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="../../disenoMejor/fontawesome/css/all.min.css">
+    <script script="../../disenoMejor/fontawesome/js/all.min.js"></script>
+
+
+
+    <link rel="stylesheet" href="../../disenoMejor/MDBootstrap/css/mdb.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <title>Registrar</title>
+    <link rel="icon" type="image/png" href="../../image/icon_Barlovento.png" />
+
+    <style>
+        #disenoLetra {
+            font-family: "Comic Sans MS";
+        }
+
+        body {
+            background-color: #2689F9;
+        }
+
+        #formColor {
+            background-color: #F71806;
+            border-radius: 20px;
+        }
+
+        .centerTabla {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <br>
+    <div class="container text-center">
+        <div class="animate__animated animate__flipInX animate__delay-1s">
+            <h1 id="disenoLetra" class="text-white">
+                Registrar de Uusuario
+            </h1>
+        </div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="animate__animated animate__backInLeft">
+            <div id="formColor" class="container">
+                <br>
+                <form id="formReg" name="formReg" onsubmit="return crearCuenta()" method="post" action="">
+                    <table class="centerTabla">
+                        <tbody>
+                            <tr>
+                                <th class="form-group">
+                                    <label for="rut" class="text-white">
+                                        <i class="fa-solid fa-id-card"></i> Rut:
+                                    </label>
+                                    <input type="text" class="form-control" name="rut" id="rut"
+                                        aria-describedby="rutHelp" maxlength="9" placeholder="Ingresa en Rut">
+                                </th>
+                                <th>&nbsp;</th>
+                                <th class="form-group">
+                                    <label for="nombre" class="text-white">
+                                        <i class="fa-solid fa-id-card"></i> Nombre:
+                                    </label>
+                                    <input type="text" class="form-control" name="nombre" id="nombre" maxlength="25"
+                                        placeholder="Ingresa su Nombre">
+                                </th>
+                                <th>&nbsp;</th>
+                                <th class="form-group">
+                                    <label for="apellido" class="text-white">
+                                        <i class="fa-solid fa-id-card"></i> Apellido:
+                                    </label>
+                                    <input type="text" class="form-control" name="apellido" id="apellido" maxlength="25"
+                                        placeholder="Ingresa su Apellido">
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <small id="rutHelp" class="form-text text-white">
+                                        Sin punto ni guion.
+                                    </small>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th class="form-group">
+                                    <label for="user" class="text-white">
+                                        <i class="fa-solid fa-user"></i> Usuario:
+                                    </label>
+                                    <input type="number" class="form-control" name="user" id="user" maxlength="50"
+                                        placeholder="Ingresa su Usuario">
+                                </th>
+                                <th>&nbsp;</th>
+                                <th class="form-group">
+                                    <label for="edad" class="text-white">
+                                        <i class="fa-solid fa-cake-candles"></i> Edad:
+                                    </label>
+                                    <input type="number" class="form-control" name="edad" id="edad" max="100"
+                                        placeholder="Ingresa su edad">
+                                </th>
+                                <th>&nbsp;</th>
+                                <th class="form-group">
+                                    <label for="nace" class="text-white">
+                                        <i class="fa-solid fa-calendar"></i> Fecha de Nacimiento:
+                                    </label>
+                                    <input type="date" class="form-control" id="start" name="trip-start" value=""
+                                        min="1950-01-01" max="2100-12-31">
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>&nbsp;</th>
+                            </tr>
+                            <tr>
+                                <th class="form-group">
+                                    <label for="sexo" class="text-white">
+                                        <i class="fa-solid fa-venus-mars"></i> Sexo:
+                                    </label>
+                                    <select name="sexo" id="sexo" class="form-select">
+                                        <option selected>Seleccion de Sexo</option>
+                                        <option value="hombre">Hombre</option>
+                                        <option value="mujer">Mujer</option>
+                                        <option value="otro">Otro</option>
+                                    </select>
+                                </th>
+                                <th>&nbsp;</th>
+                                <th class="form-group">
+                                    <label for="direccion" class="text-white">
+                                        <i class="fa-solid fa-user"></i> Direccion:
+                                    </label>
+                                    <input type="number" class="form-control" name="direccion" id="direccion"
+                                        maxlength="" placeholder="Ingresa su direccion">
+                                </th>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <div class="text-center">
+                        <button onclick="location.href='javascript:history.back()'" type="button"
+                            class="btn btn-primary">Volver</button>
+                    </div>
+                </form>
+                <br>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-center align-items-center">
+        <div class="text-center" id="noticia"></div>
+    </div>
+
+    <br>
+    <div id="pies"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            $("#pies").load("../../espacioHTML/footers.html");
+        });
+
+        $(function () {
+            $("#noticia").load("avisar/toasts.html");
+        });
+
+        $(function () {
+            $('#datetimepicker1').datetimepicker();
+        });
+
+        function crearCuenta() {
+
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+#disenoLetra {
+  font-family: "Comic Sans MS";
+}
+
+body {
+  background-color: #2689f9;
+}
+
+label {
+  display: block;
+  text-align: right;
+}
+
+#formColor {
+  background-color: #f71806;
+  border-radius: 20px;
+}
+
+.centerTabla {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*
+@media (max-width: 600px) {
+    #formColor {
+        background-color: #F71806;
+        border-radius: 20px;
+    }
+}*/
