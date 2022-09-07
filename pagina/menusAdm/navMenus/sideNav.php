@@ -88,7 +88,7 @@
     ?>
         <a href="../menu.php">
             <button type="button" class="btn btn-primary">
-                <i class="fas fa-house-chimney"></i> <?php echo $verServer; ?>
+                <i class="fas fa-house-chimney"></i> Menú
             </button>
         </a>
     <?php
@@ -165,6 +165,7 @@
         }
         ?>
         <span>© 2018 - <?php echo date("Y"); ?></span>
+        <span> <?php echo $verServer; ?></span>
     </div>
 </div>
 
