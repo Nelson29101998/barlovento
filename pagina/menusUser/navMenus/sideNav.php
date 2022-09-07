@@ -126,7 +126,7 @@
         }
         ?>        
         <span>© 2018 - <?php echo date("Y"); ?></span>
-        <span> <?php echo $verServer; ?></span>
+        <span><?php echo $verServer; ?></span>
     </div>
 </div>
 
