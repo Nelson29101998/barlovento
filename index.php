@@ -3,5 +3,5 @@
 include 'conectarSQL/conectar_SQL.php';
 
 //*Ese es para pagina de inicio.
-include_once "inicio.html";
+include_once "inicio.php";
 ?>
