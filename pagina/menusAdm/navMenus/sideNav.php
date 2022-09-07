@@ -166,6 +166,7 @@
         ?>
         <span>© 2018 - <?php echo date("Y"); ?></span>
         <span> <?php echo $verServer; ?></span>
+        <span><?php echo $_SERVER["REQUEST_URI"]; ?></span>
     </div>
 </div>
 
