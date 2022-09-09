@@ -9,9 +9,7 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
     $rut = $_SESSION["rut"];
     $_SESSION["rut"] = $rut;
 
-    include_once "../../../conectarSQL/conectar_SQL.php";
-    require_once "../../../ajuste/MobileDetect/Mobile_Detect.php";
-    $detect = new Mobile_Detect;
+    include_once "../../../conectarSQL/conectar_SQL.php";    
 ?>
     <!DOCTYPE html>
     <html lang="es">
