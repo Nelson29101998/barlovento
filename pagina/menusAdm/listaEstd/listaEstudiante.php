@@ -10,6 +10,8 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
     $_SESSION["rut"] = $rut;
 
     include_once "../../../conectarSQL/conectar_SQL.php";
+    require_once "../../../ajuste/MobileDetect/Mobile_Detect.php";
+    $detect = new Mobile_Detect;
 ?>
     <!DOCTYPE html>
     <html lang="es">
@@ -135,22 +137,26 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
                             echo "<tr>
                             <th class='text-center'>" . $sum . "</th>
                         <th>
-                        <a href='editarEstd.php?verRut=".$row['rut']."'>
+                        <a href='editarEstd.php?verRut=" . $row['rut'] . "'>
                             <button type='button' class='btn btn-primary'>
                                 <i class='fas fa-pencil'></i>
                             </button>
-                        </a>                            
-                        </th>   
+                        </a>
+                        </th>
                         <th>" . $row['rut'] . "</th>
                         <th>" . $row['estudiante'] . "</th>
                         <th>" . $row['telefono'] . "</th>
                         <th>" . $row['mail'] . "</th>
                         <th>
-                        <a href='subirSQL/borrarEstd.php?borrarRut=".$row['rut']."'>
-                            <button type='button' id='borrar' class='btn btn-danger'>
+                        <a href='subirSQL/borrarEstd.php?borrarRut=" . $row['rut'] . "'>
+                            <button type='button'";
+                            if (!($detect->isMobile() && !$detect->isTablet())) {
+                                echo "id='borrar'";
+                            }
+                          echo "class='btn btn-danger'>
                                 <i class='fas fa-trash-can'></i>
                             </button>
-                        </a>                            
+                        </a>
                         </th>
                         </tr>";
                         }
@@ -160,6 +166,15 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
                 </tbody>
             </table>
         </div>
+
+        <?php
+        if ($detect->isMobile() && !$detect->isTablet()) {
+            echo "<br>
+            <div class='text-center'>
+                <small>¡Cuidado se va a borrar a la cuenta de estudiante: Asistencia, Estudiante, Incripcion y todas las partes. Que te puede perder!</small>
+            </div>";
+        }
+        ?>
 
         <br>
 
@@ -178,11 +193,14 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
         <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
         <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css" />
         <script>
-            tippy('#borrar', {
-                content: "¡Cuidado se va a borrar a la cuenta de estudiante: Asistencia, Estudiante, Incripcion y todas las partes. Que te puede perder!",
-                animation: 'scale',
-                interactive: true
-            });
+            var element = document.getElementById('borrar');
+            if (element != null && element.value == '') {
+                tippy('#borrar', {
+                    content: "¡Cuidado se va a borrar a la cuenta de estudiante: Asistencia, Estudiante, Incripcion y todas las partes. Que te puede perder!",
+                    animation: 'scale',
+                    interactive: true
+                });
+            }
         </script>
 
     </body>
