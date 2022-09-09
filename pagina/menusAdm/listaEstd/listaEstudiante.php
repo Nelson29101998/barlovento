@@ -171,7 +171,7 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
         if ($detect->isMobile() && !$detect->isTablet()) {
             echo "<br>
             <div class='text-center'>
-                <small>¡Cuidado se va a borrar a la cuenta de estudiante: Asistencia, Estudiante, Incripcion y todas las partes. Que te puede perder!</small>
+                <small>¡Cuidado si te borrar a la cuenta de estudiante: Asistencia, Estudiante, Incripcion y todas las partes. Que te puede perder!</small>
             </div>";
         }
         ?>
