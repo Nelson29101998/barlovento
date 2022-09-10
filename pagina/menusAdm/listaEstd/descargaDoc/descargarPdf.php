@@ -30,6 +30,7 @@ if (!empty($_GET['verCurso'])) {
 $html = "<style>
 table {
     border: #b2b2b2 1px solid;
+    padding: 3px;
   }
   td, th {
     border: black 1px solid;
