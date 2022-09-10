@@ -27,7 +27,8 @@ if (!empty($_GET['verCurso'])) {
   $tituloCurso = "Ninguno";
 }
 
-$html = "<style>
+$html = <<<EOD
+<style>
   table {
     border: #b2b2b2 1px solid;
     padding: 3px;
@@ -35,28 +36,37 @@ $html = "<style>
   td, th {
     border: black 1px solid;
   }
+  .tamanoContacto{
+    width: 90px
+  }
+  .tamanoMail{
+    width: 180px
+  }
 </style>
-<h3>Autor: ".$nomAutor."</h3>
-<h3>Curso: ".$tituloCurso."</h3>
+<h3>Autor: $nomAutor</h3>
+<h3>Curso: $tituloCurso</h3>
 <table>
 <thead>
 <tr>
     <th>Rut</th>
     <th>Nombre</th>
-    <th>Contacto</th>
-    <th>Mail</th>
+    <th class="tamanoContacto">Contacto</th>
+    <th class="tamanoMail">Mail</th>
 </tr>
 </thead>
-<tbody>";
+<tbody>
+EOD;
 $resultados = mysqli_query($conexion, $revisarSQL);
 if (mysqli_num_rows($resultados) > 0) {
     while ($row = mysqli_fetch_array($resultados)) {
-     $html.= "<tr>
-        <th>" . $row['rut'] . "</th>
-        <th>" . $row['estudiante'] . "</th>
-        <th>" . $row['telefono'] . "</th>
-        <th>" . $row['mail'] . "</th>
-    </tr>";
+     $html.= <<<EOD
+     <tr>
+        <th>$row[rut]</th>
+        <th>$row[estudiante]</th>
+        <th class="tamanoContacto">$row[telefono]</th>
+        <th class="tamanoMail">$row[mail]</th>
+    </tr>
+    EOD;
     }
 }
 mysqli_free_result($resultados);
