@@ -28,7 +28,7 @@ if (!empty($_GET['verCurso'])) {
 }
 
 $html = "<style>
-table {
+  table {
     border: #b2b2b2 1px solid;
     padding: 3px;
   }
