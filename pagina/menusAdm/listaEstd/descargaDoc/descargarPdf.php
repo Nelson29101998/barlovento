@@ -1,5 +1,5 @@
 <?php
-include '../../../../disenoMejor/TCPDF/tcpdf.php';
+include '../../../../ajuste/TCPDF/tcpdf.php';
 include_once "../../../../conectarSQL/conectar_SQL.php";
 
 $rut = $_GET["rut"];
