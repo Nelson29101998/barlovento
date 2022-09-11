@@ -153,7 +153,7 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
                             if (!($detect->isMobile() && !$detect->isTablet())) {
                                 echo "id='borrar'";
                             }
-                          echo "class='btn btn-danger'>
+                            echo "class='btn btn-danger'>
                                 <i class='fas fa-trash-can'></i>
                             </button>
                         </a>
@@ -167,32 +167,68 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
             </table>
         </div>
 
-        <?php
-        if ($detect->isMobile() && !$detect->isTablet()) {
-            echo "<br>
+        <form id="formTitulo" name="formTitulo" onsubmit="return cursosTitulo()" method="post" target="_blank" action="<?php echo 'descargaDoc/descargarPdf.php?rut=' . $rut . '&verCurso=' . $urlCursos; ?>">
+
+            <?php
+            if ($detect->isMobile() && !$detect->isTablet()) {
+                echo "<br>
             <div class='text-center'>
                 <small>¡Cuidado si te borrar a la cuenta de estudiante: Asistencia, Estudiante, Incripcion y todas las partes. Que te puede perder!</small>
             </div>";
-        }
-        ?>
-
-        <br>
-
-        <div class="text-center animate__animated animate__bounceIn animate__delay-1s">
-            <?php
-            echo "<a href='descargaDoc/descargarPdf.php?rut=" . $rut . "&verCurso=" . $urlCursos . "' target='_blank'>           
-                    <button type='button' class='btn btn-danger'>
-                        <i class='fas fa-file-pdf' style='font-size: 18px;'></i> Descargar un PDF
-                    </button> 
-                </a>";
+            }
             ?>
-        </div>
+
+            <br>
+
+            <div class="animate__animated animate__bounceIn animate__delay-1s">
+                <table style="background-color: #F71806;">
+                    <thead>
+                        <tr>
+                            <th>
+                                Nombre de titulo de PDF:
+                            </th>
+                            <th>
+                                <input type="text" name="titulo" id="titulo" class="form-control" placeholder="Ingresa su Titulo">
+                            </th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <br>
+
+            <?php
+            include_once "avisar/toastsPDF.html";
+            ?>
+
+            <br>
+
+            <div class="text-center animate__animated animate__bounceIn animate__delay-1s">
+                <button type="submit" class="btn btn-danger">
+                    <i class="fas fa-file-pdf" style="font-size: 18px;"></i> Descargar un PDF
+                </button>
+            </div>
+        </form>
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
         <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
         <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css" />
         <script>
+            function cursosAsistencia() {
+                return true;
+            }
+
+            function cursosTitulo() {
+                var titulo = document.forms["formTitulo"]["titulo"].value;
+                if (titulo == "" || titulo == null) {
+                    $(document).ready(function() {
+                        $('.errorTitulo').toast('show');
+                    });
+                    return false;
+                }
+                return true;
+            }
+
             var element = document.getElementById('borrar');
             if (element != null && element.value == '') {
                 tippy('#borrar', {
