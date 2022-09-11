@@ -42,6 +42,9 @@ $html = <<<EOD
   .tamanoRut{
     width: 60px
   }
+  .tamanoNombre{
+    width: 160px
+  }
   .tamanoContacto{
     width: 90px
   }
@@ -55,7 +58,7 @@ $html = <<<EOD
 <thead>
 <tr>
     <th class="tamanoRut">Rut</th>
-    <th>Nombre</th>
+    <th class="tamanoNombre">Nombre</th>
     <th class="tamanoContacto">Contacto</th>
     <th class="tamanoMail">Mail</th>
 </tr>
@@ -68,7 +71,7 @@ if (mysqli_num_rows($resultados) > 0) {
      $html.= <<<EOD
       <tr>
         <th class="tamanoRut">$row[rut]</th>
-        <th>$row[estudiante]</th>
+        <th class="tamanoNombre">$row[estudiante]</th>
         <th class="tamanoContacto">$row[telefono]</th>
         <th class="tamanoMail">$row[mail]</th>
       </tr>
