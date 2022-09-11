@@ -2,6 +2,7 @@
 include '../../../../ajuste/TCPDF/tcpdf.php';
 include_once "../../../../conectarSQL/conectar_SQL.php";
 
+$titulo = $_POST['titulo'];
 $rut = $_GET["rut"];
 
 $buscarAutor = "SELECT * FROM administrar WHERE rut ='".$rut."'";
@@ -30,11 +31,16 @@ if (!empty($_GET['verCurso'])) {
 $html = <<<EOD
 <style>
   table {
+    margin-left: auto;
+                margin-right: auto;
     border: #b2b2b2 1px solid;
     padding: 3px;
   }
   td, th {
     border: black 1px solid;
+  }
+  .tamanoRut{
+    width: 60px
   }
   .tamanoContacto{
     width: 90px
@@ -48,7 +54,7 @@ $html = <<<EOD
 <table>
 <thead>
 <tr>
-    <th>Rut</th>
+    <th class="tamanoRut">Rut</th>
     <th>Nombre</th>
     <th class="tamanoContacto">Contacto</th>
     <th class="tamanoMail">Mail</th>
@@ -60,18 +66,20 @@ $resultados = mysqli_query($conexion, $revisarSQL);
 if (mysqli_num_rows($resultados) > 0) {
     while ($row = mysqli_fetch_array($resultados)) {
      $html.= <<<EOD
-     <tr>
-        <th>$row[rut]</th>
+      <tr>
+        <th class="tamanoRut">$row[rut]</th>
         <th>$row[estudiante]</th>
         <th class="tamanoContacto">$row[telefono]</th>
         <th class="tamanoMail">$row[mail]</th>
-    </tr>
+      </tr>
     EOD;
     }
 }
 mysqli_free_result($resultados);
-$html.= "</tbody>
-</table>";
+$html.= <<<EOD
+</tbody>
+</table>
+EOD;
 
 class MYPDF extends TCPDF {
   //Page header
@@ -82,7 +90,8 @@ class MYPDF extends TCPDF {
       // Set font
       $this->SetFont('helvetica', 'B', 20);
       // Title
-      $this->Cell(0, 15, 'Lista de los Estudiantes', 0, false, 'C', 0, '', 0, false, 'M', 'M');
+      $titulo = $_POST['titulo'];
+      $this->Cell(0, 15, $titulo, 0, false, 'C', 0, '', 0, false, 'M', 'M');
   }
 
   // Page footer
@@ -99,7 +108,7 @@ class MYPDF extends TCPDF {
 $pdf = new MYPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 $pdf->SetCreator(PDF_CREATOR);
 $pdf->SetAuthor($nomAutor);
-$pdf->SetTitle('Tabla de Centro Barloventos');
+$pdf->SetTitle($titulo);
 //* set margins o posicion en el centro.
 $pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
 $pdf->SetHeaderMargin(PDF_MARGIN_HEADER);
@@ -108,5 +117,5 @@ $pdf->setFontSubsetting(true);
 $pdf->SetFont('helvetica', 'B', 10);
 $pdf->AddPage();
 $pdf->writeHTML($html, true, 0, true, true);
-$pdf->Output('listaEstudiante.pdf', 'I');
+$pdf->Output($titulo.'.pdf', 'I');
 ?>
