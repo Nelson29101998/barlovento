@@ -99,7 +99,7 @@
         include_once "../../../conectarSQL/conectar_SQL.php";
         require_once "../../../ajuste/MobileDetect/Mobile_Detect.php";
     }
-    
+
     $detect = new Mobile_Detect;
 
     $espacioSQL = "SHOW TABLE STATUS";
@@ -200,16 +200,16 @@
 <div class="container-fluid">
     <div class="title">
         <span style="font-size:30px;cursor:pointer;" class="izquierda" onclick="openNav()">&#9776; Abrir</span>
-        <?php 
-        if(!($detect->isMobile())){
+        <?php
+        if (!($detect->isMobile())) {
         ?>
-        <span class="centro">
-            <?php
-            $mbytes = number_format($tamano / (1024 * 1024), 2);
-            echo $mbytes . " MB Espacio de la base de datos. Maximo de 5 MB.";
-            ?>
-        </span>
-        <?php 
+            <span class="centro">
+                <?php
+                $mbytes = number_format($tamano / (1024 * 1024), 2);
+                echo $mbytes . " MB Espacio de la base de datos. Maximo de 5 MB.";
+                ?>
+            </span>
+        <?php
         }
         ?>
         <span style="font-size:20px;cursor:pointer;" class="badge badge-primary derecha" id="verReloj"></span>
