@@ -68,6 +68,13 @@
         float: left;
     }
 
+    .title .centro {
+        top: 50%;
+        left: 50%;
+        margin-top: 100px;
+        margin-left: 100px;
+    }
+
     .title .derecha {
         float: right;
     }
@@ -79,12 +86,29 @@
     </a>
     <?php
     $verServer = $_SERVER['SERVER_NAME'];
-    if($verServer == 'barlovento.herokuapp.com'){
+    if ($verServer == 'barlovento.herokuapp.com') {
         $sacar = "/";
-    }else{
+    } else {
         $sacar = "/centroBarlovento/";
     }
-    if ($_SERVER["REQUEST_URI"] !== $sacar."pagina/menusAdm/menu.php") {
+
+    if ($_SERVER["REQUEST_URI"] == $sacar . "pagina/menusAdm/menu.php") {
+        include_once "../../conectarSQL/conectar_SQL.php";
+    } else {
+        include_once "../../../conectarSQL/conectar_SQL.php";
+    }
+
+    $espacioSQL = "SHOW TABLE STATUS";
+
+    $resultados = mysqli_query($conexion, $espacioSQL);
+    $tamano = 0;
+    if (mysqli_num_rows($resultados) > 0) {
+        while ($row = mysqli_fetch_array($resultados)) {
+            $tamano += $row["Data_length"] + $row["Index_length"];
+        }
+    }
+
+    if ($_SERVER["REQUEST_URI"] !== $sacar . "pagina/menusAdm/menu.php") {
     ?>
         <a href="../menu.php">
             <button type="button" class="btn btn-primary">
@@ -93,10 +117,10 @@
         </a>
     <?php
     }
-    if ($_SERVER["REQUEST_URI"] !== $sacar."pagina/menusAdm/asistenciaAdm/asistencia.php") {
-        if ($_SERVER["REQUEST_URI"] == $sacar."pagina/menusAdm/menu.php") {
+    if ($_SERVER["REQUEST_URI"] !== $sacar . "pagina/menusAdm/asistenciaAdm/asistencia.php") {
+        if ($_SERVER["REQUEST_URI"] == $sacar . "pagina/menusAdm/menu.php") {
             echo '<a href="asistenciaAdm/asistencia.php">';
-        } else if ($_SERVER["REQUEST_URI"] !== $sacar."pagina/menusAdm/menu.php") {
+        } else if ($_SERVER["REQUEST_URI"] !== $sacar . "pagina/menusAdm/menu.php") {
             echo '<a href="../asistenciaAdm/asistencia.php">';
         }
     ?>
@@ -106,10 +130,10 @@
         </a>
     <?php
     }
-    if ($_SERVER["REQUEST_URI"] !== $sacar."pagina/menusAdm/arreglarAdm/fichaDeParticipante.php") {
-        if ($_SERVER["REQUEST_URI"] == $sacar."pagina/menusAdm/menu.php") {
+    if ($_SERVER["REQUEST_URI"] !== $sacar . "pagina/menusAdm/arreglarAdm/fichaDeParticipante.php") {
+        if ($_SERVER["REQUEST_URI"] == $sacar . "pagina/menusAdm/menu.php") {
             echo '<a href="arreglarAdm/fichaDeParticipante.php">';
-        } else if ($_SERVER["REQUEST_URI"] !== $sacar."pagina/menusAdm/menu.php") {
+        } else if ($_SERVER["REQUEST_URI"] !== $sacar . "pagina/menusAdm/menu.php") {
             echo '<a href="../arreglarAdm/fichaDeParticipante.php">';
         }
     ?>
@@ -119,10 +143,10 @@
         </a>
     <?php
     }
-    if ($_SERVER["REQUEST_URI"] !== $sacar."pagina/menusAdm/profesorAdm/profesor.php") {
-        if ($_SERVER["REQUEST_URI"] == $sacar."pagina/menusAdm/menu.php") {
+    if ($_SERVER["REQUEST_URI"] !== $sacar . "pagina/menusAdm/profesorAdm/profesor.php") {
+        if ($_SERVER["REQUEST_URI"] == $sacar . "pagina/menusAdm/menu.php") {
             echo '<a href="profesorAdm/profesor.php">';
-        } else if ($_SERVER["REQUEST_URI"] !== $sacar."pagina/menusAdm/menu.php") {
+        } else if ($_SERVER["REQUEST_URI"] !== $sacar . "pagina/menusAdm/menu.php") {
             echo '<a href="../profesorAdm/profesor.php">';
         }
     ?>
@@ -132,10 +156,10 @@
         </a>
     <?php
     }
-    if ($_SERVER["REQUEST_URI"] !== $sacar."pagina/menusAdm/listaEstd/listaEstudiante.php") {
-        if ($_SERVER["REQUEST_URI"] == $sacar."pagina/menusAdm/menu.php") {
+    if ($_SERVER["REQUEST_URI"] !== $sacar . "pagina/menusAdm/listaEstd/listaEstudiante.php") {
+        if ($_SERVER["REQUEST_URI"] == $sacar . "pagina/menusAdm/menu.php") {
             echo '<a href="listaEstd/listaEstudiante.php">';
-        } else if ($_SERVER["REQUEST_URI"] !== $sacar."pagina/listaEstd/listaEstudiante.php") {
+        } else if ($_SERVER["REQUEST_URI"] !== $sacar . "pagina/listaEstd/listaEstudiante.php") {
             echo '<a href="../listaEstd/listaEstudiante.php">';
         }
     ?>
@@ -145,9 +169,9 @@
         </a>
     <?php
     }
-    if ($_SERVER["REQUEST_URI"] == $sacar."pagina/menusAdm/menu.php") {
+    if ($_SERVER["REQUEST_URI"] == $sacar . "pagina/menusAdm/menu.php") {
         echo '<a href="../buscando/cerrarCuenta.php">';
-    } else if ($_SERVER["REQUEST_URI"] !== $sacar."pagina/menusAdm/menu.php") {
+    } else if ($_SERVER["REQUEST_URI"] !== $sacar . "pagina/menusAdm/menu.php") {
         echo '<a href="../../buscando/cerrarCuenta.php">';
     }
     ?>
@@ -158,9 +182,9 @@
 
     <div class="footer text-center">
         <?php
-        if ($_SERVER["REQUEST_URI"] == $sacar."pagina/menusAdm/menu.php") {
+        if ($_SERVER["REQUEST_URI"] == $sacar . "pagina/menusAdm/menu.php") {
             echo '<img src="../../image/logo_barlovento.png" class="img-fluid" alt="logo_CentroBarlovento">';
-        } else if ($_SERVER["REQUEST_URI"] !== $sacar."pagina/menusAdm/menu.php") {
+        } else if ($_SERVER["REQUEST_URI"] !== $sacar . "pagina/menusAdm/menu.php") {
             echo '<img src="../../../image/logo_barlovento.png" class="img-fluid" alt="logo_CentroBarlovento">';
         }
         ?>
@@ -172,15 +196,20 @@
 <div class="container-fluid">
     <div class="title">
         <span style="font-size:30px;cursor:pointer;" class="izquierda" onclick="openNav()">&#9776; Abrir</span>
-
+        <span class="centro">
+            <?php
+            $mbytes = number_format($tamano / (1024 * 1024), 2);
+            echo $mbytes . " MB Espacio de la base de datos. Maximo de 5 MB.";
+            ?>
+        </span>
         <span style="font-size:20px;cursor:pointer;" class="badge badge-primary derecha" id="verReloj"></span>
     </div>
 </div>
 
 <?php
-if ($_SERVER["REQUEST_URI"] == $sacar."pagina/menusAdm/menu.php") {
+if ($_SERVER["REQUEST_URI"] == $sacar . "pagina/menusAdm/menu.php") {
     echo '<script src="../../moment/moment.min.js"></script>';
-} else if ($_SERVER["REQUEST_URI"] !== $sacar."pagina/menusAdm/menu.php") {
+} else if ($_SERVER["REQUEST_URI"] !== $sacar . "pagina/menusAdm/menu.php") {
     echo '<script src="../../../moment/moment.min.js"></script>';
 }
 ?>
