@@ -94,7 +94,7 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
         </div>
 
         <div class="container-fluid animate__animated animate__bounceIn animate__delay-1s">
-            <form id="formAddAlumno" name="formAddAlumno" onsubmit="return creaAlumno()" method="post" action="subirSql/anadirEstd.php">
+            <form id="formAddAlumno" name="formAddAlumno" onsubmit="return creaAlumno()" method="post" action="subirSQL/anadirEstd.php">
                 <table style="background-color: #F71806; border-radius: 15px;">
                     <tbody>
                         <tr>
