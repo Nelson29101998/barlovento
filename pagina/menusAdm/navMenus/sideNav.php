@@ -192,7 +192,7 @@
                 <div class="progress-bar" role="progressbar" <?php echo "style='width: " . $totalPorct . "%';"; ?> aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
             <?php
-            echo $mbytes . " MB / 5 MB.";
+            echo $mbytes . " MB / " . $tamanoMax . " MB.";
             ?>
         </div>
 
