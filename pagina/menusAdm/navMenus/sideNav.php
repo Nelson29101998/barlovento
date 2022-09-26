@@ -189,7 +189,7 @@
             Espacio de la base de datos
             <br>
             <div class="progress" style="height: 15px; border-radius: 10px;">
-                <div class="progress-bar" role="progressbar" <?php echo "style='width: " . $totalPorct . "%; border-radius: 10px;´"; ?> aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" <?php echo "style='width: " . $totalPorct . "%; border-radius: 10px;'"; ?> aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
             <?php
             echo $mbytes . " MB / " . $tamanoMax . " MB";
