@@ -68,13 +68,6 @@
         float: left;
     }
 
-    .title .centro {
-        top: 50%;
-        left: 50%;
-        margin-top: 100px;
-        margin-left: 100px;
-    }
-
     .title .derecha {
         float: right;
     }
@@ -106,6 +99,7 @@
 
     $resultados = mysqli_query($conexion, $espacioSQL);
     $tamano = 0;
+    $tamanoMax = 5;
     if (mysqli_num_rows($resultados) > 0) {
         while ($row = mysqli_fetch_array($resultados)) {
             $tamano += $row["Data_length"] + $row["Index_length"];
@@ -184,7 +178,24 @@
     </button>
     </a>
 
+    <?php
+    $mbytes = number_format($tamano / (1024 * 1024), 2);
+    $totalPorct = 0;
+    $totalPorct = (100 * $mbytes) / $tamanoMax;
+    ?>
+
     <div class="footer text-center">
+        <div class="container-fluid">
+            Espacio de la base de datos.
+            <br>
+            <div class="progress" style="height: 15px;">
+                <div class="progress-bar" role="progressbar" <?php echo "style='width: " . $totalPorct . "%';"; ?> aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <?php
+            echo $mbytes . " MB / 5 MB.";
+            ?>
+        </div>
+
         <?php
         if ($_SERVER["REQUEST_URI"] == $sacar . "pagina/menusAdm/menu.php") {
             echo '<img src="../../image/logo_barlovento.png" class="img-fluid" alt="logo_CentroBarlovento">';
@@ -197,21 +208,12 @@
     </div>
 </div>
 
+
+
 <div class="container-fluid">
     <div class="title">
         <span style="font-size:30px;cursor:pointer;" class="izquierda" onclick="openNav()">&#9776; Abrir</span>
-        <?php
-        if (!($detect->isMobile())) {
-        ?>
-            <span class="centro">
-                <?php
-                $mbytes = number_format($tamano / (1024 * 1024), 2);
-                echo $mbytes . " MB Espacio de la base de datos. Maximo de 5 MB.";
-                ?>
-            </span>
-        <?php
-        }
-        ?>
+        
         <span style="font-size:20px;cursor:pointer;" class="badge badge-primary derecha" id="verReloj"></span>
     </div>
 </div>
