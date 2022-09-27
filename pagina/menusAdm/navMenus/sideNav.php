@@ -190,7 +190,6 @@
             <br>
             <div class="progress" style="height: 15px; border-radius: 10px;">
                 <?php
-
                 if ($totalPorct < 50){
                     $colorLetra = '';
                     $palabra = '';
