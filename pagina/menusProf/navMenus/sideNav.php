@@ -170,7 +170,23 @@
             Espacio de la base de datos
             <br>
             <div class="progress" style="height: 15px; border-radius: 10px;">
-                <div class="progress-bar" role="progressbar" <?php echo "style='width: " . $totalPorct . "%; border-radius: 10px;'"; ?> aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                <?php
+                if ($totalPorct < 50){
+                    $colorLetra = '';
+                    $palabra = '';
+                }
+                if ($totalPorct >= 50) {
+                   $colorLetra = 'bg-warning';
+                   $palabra = 'Queda poca espacio';
+                }
+                if ($totalPorct >= 90) {
+                    $colorLetra = 'bg-danger';
+                    $palabra = 'Esta lleno espacio';
+                }
+                echo "<div class='progress-bar " . $colorLetra . "' role='progressbar' style='width: " . $totalPorct . "%; border-radius: 10px;' aria-valuenow='25' aria-valuemin='0' aria-valuemax='100'>
+                  ".$palabra."
+                </div>";
+                ?>
             </div>
             <?php
             echo $mbytes . " MB / " . $tamanoMax . " MB";
