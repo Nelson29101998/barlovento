@@ -194,7 +194,7 @@
                     $colorLetra = '';
                     $palabra = '';
                 }
-                if ($totalPorct >= 50) {
+                if ($totalPorct >= 50 && $totalPorct < 90) {
                    $colorLetra = 'bg-warning';
                    $palabra = 'Queda poca espacio';
                 }
