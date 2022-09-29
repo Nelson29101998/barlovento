@@ -23,7 +23,10 @@ if (count($_COOKIE) > 0) {
                         <a class="learn-more" href="#">Leer mas<i class="fa fa-angle-right ml-2"></i></a>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" onclick="cerrarVentana()">
+                    <button type="button" class="btn btn-danger" onclick="noGracias()">
+                            <i class="fas fa-cookie-bite"></i> No, Gracias
+                        </button>
+                        <button type="button" class="btn btn-primary" onclick="cerrarVentanaOk()">
                             <i class="fas fa-cookie-bite"></i> Ok
                         </button>
                     </div>
@@ -36,12 +39,16 @@ if (count($_COOKIE) > 0) {
                 myModal.show();
             }
 
-            function cerrarVentana() {
+            function cerrarVentanaOk() {
                 var now = new Date();
                 var time = now.getTime();
                 var expireTime = time + 30000 * 36000;
                 now.setTime(expireTime);
                 document.cookie = "verVentana=Cerrar; expires="+now.toUTCString()+"; path=/";
+                myModal.hide();
+            }
+
+            function noGracias() {                
                 myModal.hide();
             }
         </script>
