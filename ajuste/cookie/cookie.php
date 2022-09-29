@@ -24,7 +24,7 @@ if (count($_COOKIE) > 0) {
                     </div>
                     <div class="modal-footer">
                     <button type="button" class="btn btn-danger" onclick="noGracias()">
-                            <i class="fas fa-cookie-bite"></i> No, Gracias
+                            No, Gracias
                         </button>
                         <button type="button" class="btn btn-primary" onclick="cerrarVentanaOk()">
                             <i class="fas fa-cookie-bite"></i> Aceptar
