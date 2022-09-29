@@ -27,7 +27,7 @@ if (count($_COOKIE) > 0) {
                             <i class="fas fa-cookie-bite"></i> No, Gracias
                         </button>
                         <button type="button" class="btn btn-primary" onclick="cerrarVentanaOk()">
-                            <i class="fas fa-cookie-bite"></i> Ok
+                            <i class="fas fa-cookie-bite"></i> Aceptar
                         </button>
                     </div>
                 </div>
