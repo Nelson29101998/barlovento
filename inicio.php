@@ -50,6 +50,7 @@
 <body>
     <header>
         <?php
+        include_once "ajuste/cookie/cookie.php";
         include_once "espacioHTML/techo.html";
         ?>
 
