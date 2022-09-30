@@ -3,7 +3,6 @@ session_start();
 unset($_SESSION["usuario"], $_SESSION["rut"]);
 setcookie('PHPSESSID', '', time() - 3600, '/');
 
-
 setcookie("nameCookieAdm", "", time() - 3600, "/");
 setcookie("userCookieAdm", "", time() - 3600, "/");
 setcookie("rutCookieAdm", "", time() - 3600, "/");
@@ -17,7 +16,6 @@ setcookie("userCookieEstd", "", time() - 3600, "/");
 setcookie("rutCookieEstd", "", time() - 3600, "/");
 
 session_destroy();
-
 ?>
 
 <!DOCTYPE html>
