@@ -45,15 +45,12 @@
             flex-direction: row;
         }
     </style>
-    <?php
-    include_once "ajuste/cookie/cookie.php";
-    ?>
 </head>
 
 <body>
     <header>
         <?php
-        
+        include_once "ajuste/cookie/cookie.php";
         include_once "espacioHTML/techo.html";
         ?>
 
