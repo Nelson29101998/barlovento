@@ -1,3 +1,11 @@
+<style>
+    .colorGalleta {
+        color: #E6CEA0;
+        background-color: #19315F;
+        border: 0px;
+        border-radius: 10px;
+    }
+</style>
 <?php
 $verServer = $_SERVER['SERVER_NAME'];
 if ($verServer == 'barlovento.herokuapp.com') {
@@ -16,14 +24,14 @@ if (count($_COOKIE) > 0) {
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="tituloVentana"><i class="fas fa-cookie"></i> Avisar Cookies</h5>
+                        <h5 class="modal-title" id="tituloVentana"><i class="fas fa-cookie colorGalleta"></i> Avisar Cookies</h5>
                     </div>
                     <div class="modal-body">
                         <p>Utilizamos cookies para optimizar nuestro sitio web y nuestro servicio.</p>
-                        <a class="learn-more" href="#">Leer mas <i class="fa fa-angle-right ml-2"></i></a>
+                        <a class="learn-more" href="#">Leer más <i class="fa fa-angle-right ml-2"></i></a>
                     </div>
                     <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" onclick="noGracias()">
+                        <button type="button" class="btn btn-danger" onclick="noGracias()">
                             No, Gracias
                         </button>
                         <button type="button" class="btn btn-primary" onclick="cerrarVentanaOk()">
@@ -44,13 +52,13 @@ if (count($_COOKIE) > 0) {
             function cerrarVentanaOk() {
                 var now = new Date();
                 var time = now.getTime();
-                var expireTime = time + 30000 * 36000;
+                var expireTime = time + 30000 * 36000; //* (30000) es 30 dias y (36000) es un dias.
                 now.setTime(expireTime);
-                document.cookie = "verVentana=Cerrar; expires="+now.toUTCString()+"; path=/";
+                document.cookie = "verVentana=Aceptar; expires=" + now.toUTCString() + "; path=/";
                 myModal.hide();
             }
 
-            function noGracias() {                
+            function noGracias() {
                 myModal.hide();
             }
         </script>
