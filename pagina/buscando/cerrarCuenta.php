@@ -37,7 +37,7 @@ session_destroy();
     <title>Esperando...</title>
     <link rel="icon" type="image/png" href="../../image/icon_Barlovento.png" />
     <style>
-        h1 {
+        h5 {
             font-family: "Comic Sans", "Comic Sans MS", "Chalkboard", "ChalkboardSE-Regular", sans-serif;
         }
 
