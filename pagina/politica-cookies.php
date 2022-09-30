@@ -17,7 +17,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
-    <title>Acerca De</title>
+    <title>Política de Cookies</title>
     <link rel="icon" type="image/png" href="../image/icon_Barlovento.png" />
     <style>
         #disenoLetra,
