@@ -29,7 +29,7 @@ if ((count($_COOKIE) > 0 && empty($_COOKIE['PHPSESSID'])) && $_COOKIE['verVentan
                     </div>
                     <div class="modal-body">
                         <p>Utilizamos cookies para optimizar nuestro sitio web y nuestro servicio.</p>
-                        <a class="learn-more" href="#">Leer más <i class="fa fa-angle-right ml-2"></i></a>
+                        <a class="learn-more" href="pagina/politica-cookies.php">Leer más <i class="fa fa-angle-right ml-2"></i></a>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" onclick="noGracias()">
