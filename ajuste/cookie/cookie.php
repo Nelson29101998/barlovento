@@ -12,7 +12,7 @@ if (count($_COOKIE) > 0) {
     echo '<script>console.log("Cookies no sopotadas")</script>';
     if ($_SERVER["REQUEST_URI"] !== $sacar . "/" || $_SERVER["REQUEST_URI"] !== $sacar . "index.php") {
 ?>
-        <div class="modal fade" id="ventanaModal" tabindex="-1" role="dialog" aria-labelledby="tituloVentana" aria-hidden="true">
+        <div class="modal fade" id="ventanaModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="tituloVentana" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
