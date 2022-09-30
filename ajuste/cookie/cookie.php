@@ -20,7 +20,7 @@ if (count($_COOKIE) > 0) {
                     </div>
                     <div class="modal-body">
                         <p>Utilizamos cookies para optimizar nuestro sitio web y nuestro servicio.</p>
-                        <a class="learn-more" href="#">Leer mas<i class="fa fa-angle-right ml-2"></i></a>
+                        <a class="learn-more" href="#">Leer mas <i class="fa fa-angle-right ml-2"></i></a>
                     </div>
                     <div class="modal-footer">
                     <button type="button" class="btn btn-danger" onclick="noGracias()">
@@ -36,7 +36,9 @@ if (count($_COOKIE) > 0) {
         <script>
             var myModal = new bootstrap.Modal(document.getElementById("ventanaModal"));
             document.onreadystatechange = function() {
-                setTimeout(() => { myModal.show(); }, 2500);
+                setTimeout(() => {
+                    myModal.show();
+                }, 2500);
             }
 
             function cerrarVentanaOk() {
