@@ -36,7 +36,7 @@ if ((count($_COOKIE) > 0 && empty($_COOKIE['PHPSESSID'])) && $_COOKIE['verVentan
                             No, Gracias
                         </button>
                         <button type="button" class="btn btn-primary" onclick="cerrarVentanaOk()">
-                            <i class="fas fa-cookie-bite"></i> Aceptar
+                            <i class="fas fa-cookie-bite colorGalleta"></i> Aceptar
                         </button>
                     </div>
                 </div>
