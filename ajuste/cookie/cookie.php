@@ -14,7 +14,7 @@ if ($verServer == 'barlovento.herokuapp.com') {
     $sacar = "/centroBarlovento/";
 }
 //setcookie("Bienvenido", "hi", time() + (86400 * 30), "/");
-if (count($_COOKIE) > 0 && empty($_COOKIE['PHPSESSID'])) {
+if ((count($_COOKIE) > 0 && empty($_COOKIE['PHPSESSID'])) && $_COOKIE['verVentana'] == "Aceptar") {
     echo '<script>console.log("Cookies sopotadas")</script>';
 } else {
     echo '<script>console.log("Cookies no sopotadas")</script>';
