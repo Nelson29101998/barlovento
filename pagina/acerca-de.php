@@ -61,37 +61,33 @@
 
 <body>
     <header>
-        <?php 
+        <?php
         include_once "../espacioHTML/techo.html";
         ?>
 
         <nav class="navbar navbar-expand-sm bg-primary navbar-dark ">
             <div class="container-fluid">
-                <button onclick="history.back()" type="button" class="btn btn-primary navbar-btn">
+                <button onclick="volverPag()" type="button" class="btn btn-primary navbar-btn">
                     <i class="fa-solid fa-house"></i> Inicio
                 </button>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menus"
-                    aria-controls="menus" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menus" aria-controls="menus" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa-solid fa-bars"></i>
                 </button>
             </div>
 
             <div class="collapse navbar-collapse" id="menus">
                 <div class="p-2">
-                    <button onclick="location.href='registrar/admst.php'" type="button"
-                        class="btn btn-primary navbar-btn">
+                    <button onclick="location.href='registrar/admst.php'" type="button" class="btn btn-primary navbar-btn">
                         <i class="fa-solid fa-user-tie"></i> Administrador
                     </button>
                 </div>
                 <div class="p-2">
-                    <button onclick="location.href='registrar/profesor.php'" type="button"
-                        class="btn btn-primary navbar-btn">
+                    <button onclick="location.href='registrar/profesor.php'" type="button" class="btn btn-primary navbar-btn">
                         <i class="fas fa-chalkboard-user"></i> Profesor
                     </button>
                 </div>
                 <div class="p-2">
-                    <button onclick="location.href='registrar/usuario.php'" type="button"
-                        class="btn btn-primary navbar-btn">
+                    <button onclick="location.href='registrar/usuario.php'" type="button" class="btn btn-primary navbar-btn">
                         <i class="fa-solid fa-user"></i> Estudiante
                     </button>
                 </div>
@@ -150,13 +146,11 @@
                         <img src="../image/fotos/foto2.jpg" class="d-block w-100" alt="foto2">
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-                    data-bs-slide="prev">
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-                    data-bs-slide="next">
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
@@ -176,11 +170,22 @@
     </main>
 
     <br>
-    <?php 
+    <?php
     include_once "../espacioHTML/footers.html";
     ?>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function volverPag(event) {
+            if ('referrer' in document) {
+                window.location = document.referrer;
+                /* OR */
+                //location.replace(document.referrer);
+            } else {
+                window.history.back();
+            }
+        }
+    </script>
 </body>
 
 </html>
