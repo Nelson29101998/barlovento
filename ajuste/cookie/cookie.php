@@ -36,7 +36,7 @@ if (count($_COOKIE) > 0) {
         <script>
             var myModal = new bootstrap.Modal(document.getElementById("ventanaModal"));
             document.onreadystatechange = function() {
-                setTimeout(() => { myModal.show(); }, 5000);
+                setTimeout(() => { myModal.show(); }, 2500);
             }
 
             function cerrarVentanaOk() {
