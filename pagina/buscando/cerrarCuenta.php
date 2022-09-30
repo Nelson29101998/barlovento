@@ -51,7 +51,6 @@ session_destroy();
 </head>
 
 <body>
-
     <div class="modal fade" id="ventanaModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="tituloVentana" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
