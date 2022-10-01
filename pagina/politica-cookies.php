@@ -184,8 +184,7 @@ if ($verServer == 'barlovento.herokuapp.com') {
                                             Durante la navegación en el Sitio, el usuario puede recibir en su
                                             dispositivo cookies enviadas desde otros sitios o servidores
                                             diferentes (el adelante <strong class="font-weight-bold">
-                                                “terceros”
-                                            </strong>),
+                                                “terceros”</strong>),
                                             en los que puede encontrar algunos elementos (tales como, imágenes,
                                             mapas, sonidos, links específicos y páginas de otros dominios) que
                                             se encuentran presentes en la página que está visitando. Entonces,
