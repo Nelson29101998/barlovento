@@ -125,7 +125,9 @@ if ($verServer == 'barlovento.herokuapp.com') {
                             <br>
                             <ol>
                                 <li>
-                                    Definición de Cookies
+                                    <strong class="font-weight-bold">
+                                        Definición de Cookies
+                                    </strong>
                                     <ol>
                                         <li>
                                             Las cookies son ficheros de textos pequeñas dimensiones que las
@@ -167,7 +169,9 @@ if ($verServer == 'barlovento.herokuapp.com') {
                                     </ol>
                                 </li>
                                 <li>
-                                    Finalidades y tipología de Cookies utilizadas
+                                    <strong class="font-weight-bold">
+                                        Finalidades y tipología de Cookies utilizadas
+                                    </strong>
                                     <ol>
                                         <li>
                                             Cuando se accede al Sitio por medio de un navegador, podrían
@@ -198,8 +202,10 @@ if ($verServer == 'barlovento.herokuapp.com') {
                                             </ol>
                                         </li>
                                         <li>
-                                            Según la finalidad de utilización de las cookies, se pueden
-                                            distinguir entre:
+                                            <strong class="font-weight-bold">
+                                                Según la finalidad de utilización de las cookies, se pueden
+                                                distinguir entre:
+                                            </strong>
                                             <ol>
                                                 <li>
                                                     <u>Cookies Técnicas:</u> Su uso es limitado estrictamente
@@ -236,7 +242,9 @@ if ($verServer == 'barlovento.herokuapp.com') {
                                     </ol>
                                 </li>
                                 <li>
-                                    Gestión de las Cookies por medio del Cookie Consent Management
+                                    <strong class="font-weight-bold">
+                                        Gestión de las Cookies por medio del Cookie Consent Management
+                                    </strong>
                                     <ol>
                                         El usuario puede seleccionar sus preferencias de cookies a través de la
                                         cookie de banner de gestión de consentimiento. Posteriormente el usuario
@@ -244,7 +252,9 @@ if ($verServer == 'barlovento.herokuapp.com') {
                                     </ol>
                                 </li>
                                 <li>
-                                    Gestión de las Cookies por medio de la Configuraicón del Navegador
+                                    <strong class="font-weight-bold">
+                                        Gestión de las Cookies por medio de la Configuraicón del Navegador
+                                    </strong>
                                     <ol>
                                         <li>
                                             Casi todos los navegadores de internet permiten verificar las
