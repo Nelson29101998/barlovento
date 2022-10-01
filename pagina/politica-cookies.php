@@ -160,9 +160,9 @@ if ($verServer == 'barlovento.herokuapp.com') {
                                         </li>
                                         <li>
                                             Se aclara que cualquier Dato Personal proporcionado o recopilado
-                                            mediante las operaciones realizadas en el Sitio Enel Distribución
-                                            será tratado por Enel Distribución o por otra empresa debidamente
-                                            autorizada por Enel Distribución a tal efecto.
+                                            mediante las operaciones realizadas en el Sitio Centro Barlovento
+                                            será tratado por Centro Barlovento o por otra empresa debidamente
+                                            autorizada por Centro Barlovento a tal efecto.
                                         </li>
                                     </ol>
                                 </li>
