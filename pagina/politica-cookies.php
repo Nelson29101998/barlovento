@@ -120,7 +120,7 @@ if ($verServer == 'barlovento.herokuapp.com') {
                                 que se recaban al acceder al sitio web <?php echo "<a href='" . $sacar . "'>
                                 <u>" . $verServer . "</u>
                                 </a>"; ?>
-                                (en adelante el “Sitio”).
+                                (en adelante el <strong class="font-weight-bold">“Sitio”</strong>).
                             </label>
                             <br>
                             <ol>
@@ -183,11 +183,13 @@ if ($verServer == 'barlovento.herokuapp.com') {
                                         <li>
                                             Durante la navegación en el Sitio, el usuario puede recibir en su
                                             dispositivo cookies enviadas desde otros sitios o servidores
-                                            diferentes (el adelante “terceros”), en los que puede encontrar
-                                            algunos elementos (tales como, imágenes, mapas, sonidos, links
-                                            específicos y páginas de otros dominios) que se encuentran presentes
-                                            en la página que está visitando. Entonces, las cookies bajo este
-                                            perfil pueden ser:
+                                            diferentes (el adelante <strong class="font-weight-bold">
+                                                “terceros”
+                                            </strong>),
+                                            en los que puede encontrar algunos elementos (tales como, imágenes,
+                                            mapas, sonidos, links específicos y páginas de otros dominios) que
+                                            se encuentran presentes en la página que está visitando. Entonces,
+                                            las cookies bajo este perfil pueden ser:
                                             <ol>
                                                 <li>
                                                     <strong class="font-weight-bold">Cookies propias</strong>,
