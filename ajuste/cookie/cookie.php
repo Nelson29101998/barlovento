@@ -47,7 +47,7 @@ if ((count($_COOKIE) > 0 && empty($_COOKIE['PHPSESSID'])) && $_COOKIE['verVentan
             document.onreadystatechange = function() {
                 setTimeout(() => {
                     myModal.show();
-                }, 2500);
+                }, 1700);
             }
 
             function cerrarVentanaOk() {
