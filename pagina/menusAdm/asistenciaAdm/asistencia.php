@@ -295,7 +295,7 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
                             }
                         } else {
                             echo "<tr style='background-color: #F71806;'>
-                            <th class='text-center' colspan='5'>
+                            <th class='text-center' colspan='7'>
                             <i class='fas fa-folder-open'></i> No hay lista de estudiande
                             </th>
                             </tr>";
