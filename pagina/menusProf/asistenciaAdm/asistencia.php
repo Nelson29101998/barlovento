@@ -10,8 +10,6 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
     $_SESSION["rut"] = $rut;
 
     include_once "../../../conectarSQL/conectar_SQL.php";
-    require_once "../../../ajuste/MobileDetect/Mobile_Detect.php";
-    $detect = new Mobile_Detect;
 ?>
     <!DOCTYPE html>
     <html lang="es">
@@ -297,7 +295,7 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
                             }
                         } else {
                             echo "<tr style='background-color: #F71806;'>
-                            <th class='text-center' colspan='5'>
+                            <th class='text-center' colspan='7'>
                             <i class='fas fa-folder-open'></i> No hay lista de estudiande
                             </th>
                             </tr>";
