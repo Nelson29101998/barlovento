@@ -1,4 +1,5 @@
 <?php
+session_start();
 if (count($_COOKIE) > 0 && (!empty($_COOKIE['nameCookieAdm'])
     || !empty($_COOKIE['userCookieAdm']) || !empty($_COOKIE['rutCookieAdm']))) {
     //*Nombre
