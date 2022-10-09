@@ -64,9 +64,9 @@ $encontrar = mysqli_fetch_array($revisarBd, MYSQLI_ASSOC);
                 $_SESSION['rut'] = $encontrar['rut'];
 
                 if ((!empty($_COOKIE['verVentana'])) && ($_COOKIE['verVentana'] == "Aceptar")) {
-                    setcookie("nameCookieProf", $encontrar['nombre'], time() + (86400 * 30), "/");
-                    setcookie("userCookieProf", $encontrar['usuario'], time() + (86400 * 30), "/");
-                    setcookie("rutCookieProf", $encontrar['rut'], time() + (86400 * 30), "/");
+                    setcookie("nameCookieProf", $encontrar['nombre'], strtotime('+30 days'), "/", false, false);
+                    setcookie("userCookieProf", $encontrar['usuario'], strtotime('+30 days'), "/", false, false);
+                    setcookie("rutCookieProf", $encontrar['rut'], strtotime('+30 days'), "/", false, false);
                 }
                 
                 header("Location: ../menusProf/menu.php");
