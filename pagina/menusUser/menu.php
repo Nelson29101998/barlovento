@@ -4,7 +4,7 @@ if ((!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) ||
     (!isset($_COOKIE['nameCookieEstd']) && !isset($_COOKIE['userCookieEstd']) && 
     !isset($_COOKIE['rutCookieEstd']))
 ) {
-    header("location: ../../../../inicio.html");
+    header("location: ../../inicio.php");
 } else {
     if (
         isset($_COOKIE['nameCookieEstd']) && isset($_COOKIE['userCookieEstd']) 
