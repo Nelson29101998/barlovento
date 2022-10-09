@@ -1,16 +1,27 @@
 <?php
 session_start();
-if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
+if ((!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) ||
+    (!isset($_COOKIE['nameCookieEstd']) && !isset($_COOKIE['userCookieEstd']) && 
+    !isset($_COOKIE['rutCookieEstd']))
+) {
     header("location: ../../../../inicio.html");
 } else {
-?>
-    <?php
-    $use = $_SESSION["usuario"];
+    if (
+        isset($_COOKIE['nameCookieEstd']) && isset($_COOKIE['userCookieEstd']) 
+        && isset($_COOKIE['rutCookieEstd'])
+    ) {
+        $use = $_COOKIE['userCookieEstd'];
+        $rut = $_COOKIE['rutCookieEstd'];
+        $nombreBienv = $_COOKIE['nameCookieEstd'];
+    }else{
+        $use = $_SESSION["usuario"];
+        $rut = $_SESSION["rut"];
+        $nombreBienv = $_SESSION['nombre'];
+    }
+    
     $_SESSION["usuario"] = $use;
-
-    $rut = $_SESSION["rut"];
     $_SESSION["rut"] = $rut;
-    ?>
+?>
     <!DOCTYPE html>
     <html lang="es">
 
@@ -44,7 +55,7 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
         ?>
         <br>
         <div class="container text-center">
-            <h1>¡Bienvenido <span><?php echo $_SESSION['nombre']; ?>!</span></h1>
+            <h1>¡Bienvenido <span><?php echo $nombreBienv; ?>!</span></h1>
             <br>
 
         </div>
