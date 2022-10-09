@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
-    header("location: ../../../../inicio.html");
+    header("location: ../../inicio.php");
 } else {
     $use = $_SESSION["usuario"];
     $_SESSION["usuario"] = $use;
