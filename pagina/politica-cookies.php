@@ -1,4 +1,5 @@
 <?php
+include_once "../ajuste/config.php";
 $verServer = $_SERVER['SERVER_NAME'];
 if ($verServer == 'barlovento.herokuapp.com') {
     $sacar = "../../";
@@ -27,75 +28,8 @@ if ($verServer == 'barlovento.herokuapp.com') {
 
     <title>Política de Cookies</title>
     <link rel="icon" type="image/png" href="../image/icon_Barlovento.png" />
-    <style>
-        #disenoLetra,
-        label,
-        p {
-            font-family: "Comic Sans", "Comic Sans MS", "Chalkboard", "ChalkboardSE-Regular", sans-serif;
-        }
 
-        body {
-            background-color: #2689F9;
-        }
-
-        #letraJusticia {
-            text-align: justify;
-        }
-
-        .navbar-nav {
-            flex-direction: row;
-        }
-
-        .carousel {
-            width: 50%;
-            height: 50%;
-            margin: 0 auto;
-        }
-
-        @media (max-width: 600px) {
-            .carousel {
-                width: 100%;
-                height: 100%;
-                margin: 0 auto;
-            }
-        }
-
-        .carousel-indicators {
-            width: auto;
-            margin: 0 auto;
-        }
-
-        ol {
-            list-style-type: none;
-            counter-reset: item;
-            margin: 0;
-            padding: 0;
-        }
-
-        ol>li {
-            display: table;
-            counter-increment: item;
-            margin-bottom: 0.6em;
-        }
-
-        ol>li:before {
-            content: counters(item, ".") ". ";
-            display: table-cell;
-            padding-right: 0.6em;
-        }
-
-        li ol>li {
-            margin: 0;
-        }
-
-        li ol>li:before {
-            content: counters(item, ".") " ";
-        }
-
-        a {
-            color: red;
-        }
-    </style>
+    <link rel="stylesheet" href="css/disenoPolitica.css?v=<?php echo $version;?>">
 </head>
 
 <body>
