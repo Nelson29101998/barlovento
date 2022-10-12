@@ -1,4 +1,5 @@
 <?php
+include_once "../../ajuste/config.php";
 session_start();
 if (count($_COOKIE) > 0 && (!empty($_COOKIE['nameCookieAdm'])
     || !empty($_COOKIE['userCookieAdm']) || !empty($_COOKIE['rutCookieAdm']))) {
@@ -33,7 +34,7 @@ if (count($_COOKIE) > 0 && (!empty($_COOKIE['nameCookieAdm'])
         <title>Administrador</title>
         <link rel="icon" type="image/png" href="../../image/icon_Barlovento.png" />
 
-        <link rel="stylesheet" href="css/ordenar.css">
+        <link rel="stylesheet" href="css/ordenar.css?v=<? echo $version; ?>">
         <style>
             table {
                 margin-left: auto;

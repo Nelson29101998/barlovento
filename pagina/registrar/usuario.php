@@ -1,4 +1,5 @@
 <?php
+include_once "../../ajuste/config.php";
 session_start();
 if (count($_COOKIE) > 0 && (!empty($_COOKIE['nameCookieEstd'])
  || !empty($_COOKIE['userCookieEstd']) || !empty($_COOKIE['rutCookieEstd']))) {
@@ -33,7 +34,7 @@ if (count($_COOKIE) > 0 && (!empty($_COOKIE['nameCookieEstd'])
         <title>Estudiante</title>
         <link rel="icon" type="image/png" href="../../image/icon_Barlovento.png" />
 
-        <link rel="stylesheet" href="css/ordenar.css">
+        <link rel="stylesheet" href="css/ordenar.css?v=<? echo $version; ?>">
         <style>
             table {
                 margin-left: auto;
