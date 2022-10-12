@@ -1,4 +1,5 @@
 <?php
+include_once "../../../ajuste/config.php";
 session_start();
 if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
     header("location: ../../inicio.php");
@@ -20,64 +21,13 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../../../disenoMejor/bootstrap/css/bootstrap.min.css">
         <script src="../../../disenoMejor/bootstrap/js/bootstrap.min.js"></script>
-
         <link rel="stylesheet" href="../../../disenoMejor/fontawesome/css/all.min.css">
         <script script="../../../disenoMejor/fontawesome/js/all.min.js"></script>
-
         <link rel="stylesheet" href="../../../disenoMejor/MDBootstrap/css/mdb.min.css">
-
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
         <title>Asistencia</title>
         <link rel="icon" type="image/png" href="../../../image/icon_Barlovento.png" />
-        <style>
-            h1,
-            h5 {
-                font-family: "Comic Sans", "Comic Sans MS", "Chalkboard", "ChalkboardSE-Regular", sans-serif;
-            }
-
-            body {
-                background-color: #2689F9;
-                color: white;
-            }
-
-            table {
-                margin-left: auto;
-                margin-right: auto;
-
-            }
-
-            td,
-            th {
-                text-align: left;
-                padding: 8px;
-            }
-
-
-            .despues tr:nth-child(even) {
-                background-color: #dddddd;
-            }
-
-            #ajustarTexto {
-                width: 35%;
-            }
-
-            @media (max-width: 600px) {
-                #ajustarTexto {
-                    width: 100%;
-                }
-            }
-
-            .form-group label {
-                float: left;
-                text-align: left;
-            }
-
-            .form-group select {
-                display: inline-block;
-                width: auto;
-                vertical-align: middle;
-            }
-        </style>
+        <link rel="stylesheet" href="css/diseno.css?v=<? echo $version; ?>">
     </head>
 
     <body>
@@ -169,9 +119,7 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
                 </table>
             </form>
         </div>
-
         <br>
-
         <div class="container-fluid">
             <form id="formCursos" name="formCursos" onsubmit="return cursosAsistencia()" method="post" action="#">
                 <div class="input-group justify-content-center">
@@ -186,7 +134,6 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
                         </button>
                     </div>
                 </div>
-
                 <br>
                 <?php
                 if (!empty($_POST['verCurso'])) {
@@ -305,9 +252,7 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
                 </table>
             </div>
         </div>
-
         <br>
-
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
         <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
