@@ -1,4 +1,5 @@
 <?php
+include_once "../../../ajuste/config.php";
 session_start();
 if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
     header("location: ../../inicio.php");
@@ -139,7 +140,7 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
         <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
         <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
         <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css" />
-        <script src="../js/fichaPartcJS.js">
+        <script src="../js/fichaPartcJS.js?v=<? echo $version; ?>">
 
         </script>
     </body>
