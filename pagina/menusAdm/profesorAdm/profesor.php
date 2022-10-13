@@ -80,8 +80,9 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
         ?>
         <br>
 
-        //* Anadir y lista de Cursos
+        
         <?php
+        //* Anadir y lista de Cursos
         include_once "ordenar/verCursos.php";
         ?>
 
