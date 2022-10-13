@@ -284,7 +284,8 @@
 </div>
 
 <br>
-//* Lista de Profesor
+
 <?php
+//* Lista de Profesor
 include_once "verListaProfesor.php"
 ?>
