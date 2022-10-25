@@ -26,7 +26,13 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
         <link rel="stylesheet" href="../../../disenoMejor/MDBootstrap/css/mdb.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
         <title>Asistencia</title>
-        <link rel="icon" type="image/png" href="../../../image/icon_Barlovento.png" />
+        
+        <?php
+        //! Favicon
+        $direccion = "../../../";
+        include_once $direccion . "ajuste/favicon.php";
+        ?>        
+
         <link rel="stylesheet" href="css/diseno.css?v=<? echo $version; ?>">
     </head>
 
