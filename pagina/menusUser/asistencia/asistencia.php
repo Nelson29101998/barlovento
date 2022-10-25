@@ -28,7 +28,13 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
         <title>Asistencia</title>
-        <link rel="icon" type="image/png" href="../../../image/icon_Barlovento.png" />
+
+        <?php
+        //! Favicon
+        $direccion = "../../../";
+        include_once $direccion . "ajuste/favicon.php";
+        ?>
+
         <style>
             h1,
             h5 {
@@ -111,12 +117,13 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
                 </div>
 
                 <br>
+
                 <?php
                 if (!empty($_POST['verCurso'])) {
                     if ($_POST['verCurso'] == "todas") {
-                        $revisarSQL = "SELECT * FROM asistencias WHERE rut='".$rut."'";
+                        $revisarSQL = "SELECT * FROM asistencias WHERE rut='" . $rut . "'";
                     } else {
-                        $revisarSQL = "SELECT * FROM asistencias WHERE cursos='" . $_POST['verCurso'] . "' AND rut='".$rut."'";
+                        $revisarSQL = "SELECT * FROM asistencias WHERE cursos='" . $_POST['verCurso'] . "' AND rut='" . $rut . "'";
 
                         echo "
                         <div class='text-center'>
@@ -124,7 +131,7 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
                         </div>";
                     }
                 } else {
-                    $revisarSQL = "SELECT * FROM asistencias WHERE rut='".$rut."'";
+                    $revisarSQL = "SELECT * FROM asistencias WHERE rut='" . $rut . "'";
                 }
                 ?>
             </form>
@@ -146,39 +153,35 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
                         if (mysqli_num_rows($resultados) > 0) {
                             while ($row = mysqli_fetch_array($resultados)) {
                         ?>
-                                <form id="formInscr" name="formInscr" method="post" action="subirSQL/subirAsist.php?verId=<?php echo $row['id'] . "&totalClases=" . $row['total']; ?>">
-                                    <?php
-                                    echo "<tr style='background-color: #F71806;' class='despues'>
+                                <?php
+                                echo "<tr style='background-color: #F71806;' class='despues'>
                                     <th>" . $row['estudiante'] . "</th>
                                     <th>" . $row['cursos'] . "</th>
                                     <th>" . date("d-m-Y", strtotime($row['fecha'])) . "</th>";
 
-                                    if ($row['asistencia'] == "Presente") {
-                                        echo "<th class='text-center'>
+                                if ($row['asistencia'] == "Presente") {
+                                    echo "<th class='text-center'>
                                     <label for='presentarSi' class='text-white'>
                                         Presente <i class='fas fa-school-circle-check'></i>
                                     </label>
                                     </th>";
-                                    } else if ($row['asistencia'] == "Ausente") {
-                                        echo "<th class='text-center'>
+                                } else if ($row['asistencia'] == "Ausente") {
+                                    echo "<th class='text-center'>
                                     <label for='presentarNo' class='text-white' >
                                         Ausente <i class='fas fa-school-circle-xmark'></i>
                                     </label>             
                                     </th>";
-                                    }
+                                }
 
-                                    echo "
+                                echo "
                                     <th class='text-center'>" . $row['total'] . "</th>
                                     <th>
                                     <button type='submit' id='guardarId' class='btn btn-success'>
                                         <i class='fas fa-floppy-disk'></i>
                                     </button>
-                                    
-                                     
                                     </th>
                                     </tr>";
-                                    ?>
-                                </form>
+                                ?>
                         <?php
                             }
                         } else {
