@@ -16,7 +16,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
     <title>Bienvenido a la portada de Centro Barlovento</title>
-    <link rel="icon" type="image/png" href="image/icon_Barlovento.png" />
+
+    <?php
+    //! Favicon
+    $direccion = "";
+    include_once $direccion . "ajuste/favicon.php";
+    ?>
+
     <style>
         #disenoLetra {
             font-family: "Comic Sans", "Comic Sans MS", "Chalkboard", "ChalkboardSE-Regular", sans-serif;
@@ -45,6 +51,10 @@
             flex-direction: row;
         }
     </style>
+    <?php
+    //*Se conecta a Python
+    //include_once "ajuste/python/conectarPython.html";
+    ?>
 </head>
 
 <body>
@@ -83,7 +93,9 @@
             </div>
         </nav>
     </header>
+
     <br>
+
     <div class="container">
         <div class="animate__animated animate__flipInX animate__delay-1s">
             <div class="text-center">
