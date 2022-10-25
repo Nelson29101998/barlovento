@@ -35,7 +35,13 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
         <title>Editar de Profesor</title>
-        <link rel="icon" type="image/png" href="../../../image/icon_Barlovento.png" />
+        
+        <?php
+        //! Favicon
+        $direccion = "../../../";
+        include_once $direccion . "ajuste/favicon.php";
+        ?>
+
         <style>
             h1,
             h5 {
@@ -138,50 +144,50 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
 
                             echo "<th>
                                     <select name='editarCurso1' id='editarCurso1' class='custom-select'>
-                                        <option value='".$row['curso']."' selected>Antes: ".$row['curso']."</option>";
-                                        include_once ("selecciones/sacarCursosSelect.php");
+                                        <option value='" . $row['curso'] . "' selected>Antes: " . $row['curso'] . "</option>";
+                            include_once("selecciones/sacarCursosSelect.php");
                             echo "</select>                            
-                            </th>";                            
-                            
+                            </th>";
+
                             echo "<th>
                                     <select name='editarCurso2' id='editarCurso2' class='custom-select'>
-                                    <option value='".$row['curso2']."' selected>Antes: ".$row['curso2']."</option>";
-                                        include_once "selecciones/sacarCursosSelect2.php";
+                                    <option value='" . $row['curso2'] . "' selected>Antes: " . $row['curso2'] . "</option>";
+                            include_once "selecciones/sacarCursosSelect2.php";
                             echo "</select>
                             </th>";
 
                             echo "<th>
                                     <select name='editarCurso3' id='editarCurso3' class='custom-select'>
-                                    <option value='".$row['curso3']."' selected>Antes: ".$row['curso3']."</option>";
-                                        include_once "selecciones/sacarCursosSelect3.php";
+                                    <option value='" . $row['curso3'] . "' selected>Antes: " . $row['curso3'] . "</option>";
+                            include_once "selecciones/sacarCursosSelect3.php";
                             echo "</select>
                             </th>";
 
                             echo "<th>
                                     <select name='editarCurso4' id='editarCurso4' class='custom-select'>
-                                    <option value='".$row['curso4']."' selected>Antes: ".$row['curso4']."</option>";
-                                        include_once "selecciones/sacarCursosSelect4.php";
+                                    <option value='" . $row['curso4'] . "' selected>Antes: " . $row['curso4'] . "</option>";
+                            include_once "selecciones/sacarCursosSelect4.php";
                             echo "</select>
                             </th>";
 
                             echo "<th>
                                     <select name='editarCurso5' id='editarCurso5' class='custom-select'>
-                                    <option value='".$row['curso5']."' selected>Antes: ".$row['curso5']."</option>";
-                                        include_once "selecciones/sacarCursosSelect5.php";
+                                    <option value='" . $row['curso5'] . "' selected>Antes: " . $row['curso5'] . "</option>";
+                            include_once "selecciones/sacarCursosSelect5.php";
                             echo "</select>
                             </th>";
 
                             echo "<th>
                                     <select name='editarCurso6' id='editarCurso6' class='custom-select'>
-                                    <option value='".$row['curso6']."' selected>Antes: ".$row['curso6']."</option>";
-                                        include_once "selecciones/sacarCursosSelect6.php";
+                                    <option value='" . $row['curso6'] . "' selected>Antes: " . $row['curso6'] . "</option>";
+                            include_once "selecciones/sacarCursosSelect6.php";
                             echo "</select>
                             </th>";
 
                             echo "<th>
                                     <select name='editarCurso7' id='editarCurso7' class='custom-select'>
-                                    <option value='".$row['curso7']."' selected>Antes: ".$row['curso7']."</option>";
-                                        include_once "selecciones/sacarCursosSelect7.php";
+                                    <option value='" . $row['curso7'] . "' selected>Antes: " . $row['curso7'] . "</option>";
+                            include_once "selecciones/sacarCursosSelect7.php";
                             echo "</select>
                             </th>";
 
@@ -204,6 +210,7 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
                 </button>
             </div>
         </form>
+
         <br>
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

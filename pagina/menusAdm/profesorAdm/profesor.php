@@ -30,7 +30,13 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
         <title>Editar</title>
-        <link rel="icon" type="image/png" href="../../../image/icon_Barlovento.png" />
+        
+        <?php
+        //! Favicon
+        $direccion = "../../../";
+        include_once $direccion . "ajuste/favicon.php";
+        ?>
+
         <style>
             h1,
             h5 {
@@ -78,9 +84,9 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
         //*SideNav y Hora
         include_once "../navMenus/sideNav.php";
         ?>
+
         <br>
 
-        
         <?php
         //* Anadir y lista de Cursos
         include_once "ordenar/verCursos.php";
