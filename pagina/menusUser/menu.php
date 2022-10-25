@@ -1,24 +1,24 @@
 <?php
 session_start();
 if ((!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) ||
-    (!isset($_COOKIE['nameCookieEstd']) && !isset($_COOKIE['userCookieEstd']) && 
-    !isset($_COOKIE['rutCookieEstd']))
+    (!isset($_COOKIE['nameCookieEstd']) && !isset($_COOKIE['userCookieEstd']) &&
+        !isset($_COOKIE['rutCookieEstd']))
 ) {
     header("location: ../../inicio.php");
 } else {
     if (
-        isset($_COOKIE['nameCookieEstd']) && isset($_COOKIE['userCookieEstd']) 
+        isset($_COOKIE['nameCookieEstd']) && isset($_COOKIE['userCookieEstd'])
         && isset($_COOKIE['rutCookieEstd'])
     ) {
         $use = $_COOKIE['userCookieEstd'];
         $rut = $_COOKIE['rutCookieEstd'];
         $nombreBienv = $_COOKIE['nameCookieEstd'];
-    }else{
+    } else {
         $use = $_SESSION["usuario"];
         $rut = $_SESSION["rut"];
         $nombreBienv = $_SESSION['nombre'];
     }
-    
+
     $_SESSION["usuario"] = $use;
     $_SESSION["rut"] = $rut;
 ?>
@@ -39,7 +39,13 @@ if ((!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) ||
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
         <title>Menu</title>
-        <link rel="icon" type="image/png" href="../../image/icon_Barlovento.png" />
+
+        <?php
+        //! Favicon
+        $direccion = "../../";
+        include_once $direccion . "ajuste/favicon.php";
+        ?>
+
         <style>
             body {
                 background-color: #2689F9;
