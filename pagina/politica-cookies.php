@@ -27,9 +27,14 @@ if ($verServer == 'barlovento.herokuapp.com') {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
     <title>Política de Cookies</title>
-    <link rel="icon" type="image/png" href="../image/icon_Barlovento.png" />
 
-    <link rel="stylesheet" href="css/disenoPolitica.css?v=<?php echo $version;?>">
+    <?php
+    //! Favicon
+    $direccion = "../";
+    include_once $direccion . "ajuste/favicon.php";
+    ?>
+
+    <link rel="stylesheet" href="css/disenoPolitica.css?v=<?php echo $version; ?>">
 </head>
 
 <body>
