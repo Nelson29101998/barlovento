@@ -21,6 +21,9 @@
     //! Favicon
     $direccion = "";
     include_once $direccion . "ajuste/favicon.php";
+
+    require_once "ajuste/MobileDetect/Mobile_Detect.php";
+    $detect = new Mobile_Detect;
     ?>
 
     <style>
@@ -108,9 +111,14 @@
     </div>
     <br>
 
-    <?php
-    include_once "espacioHTML/footers.html";
-    ?>
+    <div <?php
+            if ($detect->isTablet()) {
+                echo "class='fixed-bottom'";
+            } ?>>
+        <?php
+        include_once "espacioHTML/footers.html";
+        ?>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </body>
