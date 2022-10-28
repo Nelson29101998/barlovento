@@ -2,7 +2,7 @@
 include_once "../../ajuste/config.php";
 session_start();
 if (count($_COOKIE) > 0 && (!empty($_COOKIE['nameCookieEstd'])
- || !empty($_COOKIE['userCookieEstd']) || !empty($_COOKIE['rutCookieEstd']))) {
+    || !empty($_COOKIE['userCookieEstd']) || !empty($_COOKIE['rutCookieEstd']))) {
     //*Nombre
     $_SESSION['nombre'] = $_COOKIE['nameCookieEstd'];
 
@@ -32,7 +32,7 @@ if (count($_COOKIE) > 0 && (!empty($_COOKIE['nameCookieEstd'])
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
         <title>Estudiante</title>
-        
+
         <?php
         //! Favicon
         $direccion = "../../";
@@ -56,7 +56,6 @@ if (count($_COOKIE) > 0 && (!empty($_COOKIE['nameCookieEstd'])
     </head>
 
     <body>
-
         <br>
         <div class="container">
             <div class="animate__animated animate__flipInX animate__delay-1s">
@@ -119,7 +118,11 @@ if (count($_COOKIE) > 0 && (!empty($_COOKIE['nameCookieEstd'])
 
         <br>
 
-        <?php include_once "../../espacioHTML/footers.html"; ?>
+        <div class="fixed-bottom">
+            <?php
+            include_once "../../espacioHTML/footers.html";
+            ?>
+        </div>
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="../../disenoMejor/bootstrap/js/bootstrap.bundle.min.js"></script>

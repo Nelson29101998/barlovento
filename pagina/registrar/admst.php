@@ -32,7 +32,7 @@ if (count($_COOKIE) > 0 && (!empty($_COOKIE['nameCookieAdm'])
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
         <title>Administrador</title>
-        
+
         <?php
         //! Favicon
         $direccion = "../../";
@@ -118,7 +118,11 @@ if (count($_COOKIE) > 0 && (!empty($_COOKIE['nameCookieAdm'])
 
         <br>
 
-        <?php include_once "../../espacioHTML/footers.html"; ?>
+        <div class="fixed-bottom">
+            <?php
+            include_once "../../espacioHTML/footers.html";
+            ?>
+        </div>
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="../../disenoMejor/bootstrap/js/bootstrap.bundle.min.js"></script>

@@ -56,6 +56,7 @@ if (count($_COOKIE) > 0 && (!empty($_COOKIE['nameCookieProf'])
     </head>
 
     <body>
+        <br>
         <div class="container">
             <div class="animate__animated animate__flipInX animate__delay-1s">
                 <div class="text-center">
@@ -117,7 +118,11 @@ if (count($_COOKIE) > 0 && (!empty($_COOKIE['nameCookieProf'])
 
         <br>
 
-        <?php include_once "../../espacioHTML/footers.html"; ?>
+        <div class="fixed-bottom">
+            <?php
+            include_once "../../espacioHTML/footers.html";
+            ?>
+        </div>
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="../../disenoMejor/bootstrap/js/bootstrap.bundle.min.js"></script>
