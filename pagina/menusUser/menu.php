@@ -47,6 +47,10 @@ if ((!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) ||
         ?>
 
         <style>
+            h1 {
+                font-family: "Comic Sans", "Comic Sans MS", "Chalkboard", "ChalkboardSE-Regular", sans-serif;
+            }
+            
             body {
                 background-color: #2689F9;
                 color: white;
