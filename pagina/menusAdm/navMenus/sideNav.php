@@ -176,17 +176,17 @@
         }
         if ($_SERVER["REQUEST_URI"] !== $sacar . "pagina/menusAdm/grafico/verGrafico.php") {
             if ($_SERVER["REQUEST_URI"] == $sacar . "pagina/menusAdm/menu.php") {
-                echo '<a href="grafico/verGrafico.php" class="disabled">';
+               // echo '<a href="grafico/verGrafico.php" class="disabled">';
             } else if ($_SERVER["REQUEST_URI"] !== $sacar . "pagina/grafico/verGrafico.php") {
-                echo '<a href="../grafico/verGrafico.php" class="disabled">';
+               // echo '<a href="../grafico/verGrafico.php" class="disabled">';
             }
         ?>
-            <button type="button" class="btn btn-primary" disabled>
+           <!-- <button type="button" class="btn btn-primary" disabled>
                 <i class="fas fa-chart-bar"></i> Ver Grafico
                 <br>
                 <small>(Próximamente)</small>
             </button>
-            </a>
+            </a> -->
         <?php
         }
         if ($_SERVER["REQUEST_URI"] == $sacar . "pagina/menusAdm/menu.php") {
