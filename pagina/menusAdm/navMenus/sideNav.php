@@ -175,6 +175,7 @@
         <?php
         }
         if ($_SERVER["REQUEST_URI"] !== $sacar . "pagina/menusAdm/grafico/verGrafico.php") {
+            //! Pronto
             if ($_SERVER["REQUEST_URI"] == $sacar . "pagina/menusAdm/menu.php") {
                // echo '<a href="grafico/verGrafico.php" class="disabled">';
             } else if ($_SERVER["REQUEST_URI"] !== $sacar . "pagina/grafico/verGrafico.php") {
