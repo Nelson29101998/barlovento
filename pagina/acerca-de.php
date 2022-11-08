@@ -38,6 +38,8 @@
 
         #letraJusticia {
             text-align: justify;
+            margin: 0 auto;
+            width: 73em;
         }
 
         .navbar-nav {
