@@ -240,7 +240,7 @@
                                                 if (mysqli_num_rows($elegirCurso7) > 0) {
                                                 ?>
                                                     <label for="cadaCurso7" class="text-white">
-                                                        <i class="fas fa-chalkboard"></i> Elegir para sexto Curso:
+                                                        <i class="fas fa-chalkboard"></i> Elegir para septimo Curso:
                                                     </label>
                                                     <select name="cadaCurso7" id="cadaCurso7" class="form-select">
                                                         <option value="vacio" selected>Selección del curso</option>
