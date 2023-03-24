@@ -65,7 +65,7 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
                             </th>
                             <th>
                                 <label for="sacarCurso1" class="text-white">
-                                    <i class="fas fa-user"></i> Elige talleres:
+                                    <i class="fas fa-user"></i> Elige Talleres:
                                 </label>
                                 <div class="form-group">
                                     <label for="sacarCurso1" class="col-auto">1-
