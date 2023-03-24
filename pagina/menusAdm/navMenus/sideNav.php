@@ -76,6 +76,11 @@
         pointer-events: none;
         cursor: default;
     }
+
+    .btn{
+        font-size: 19px;
+        font-weight: bolder;
+    }
 </style>
 
 <div id="mySidenav" class="sidenav">
@@ -267,7 +272,7 @@ if ($_SERVER["REQUEST_URI"] == $sacar . "pagina/menusAdm/menu.php") {
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     function openNav() {
-        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("mySidenav").style.width = "300px";
 
         const element = document.getElementById('my-element');
         element.classList.add('animate__animated', 'animate__fadeInLeft');
