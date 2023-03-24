@@ -7,7 +7,7 @@
 </div>
 
 <div class="animate__animated animate__bounceIn animate__delay-1s">
-    <form id="formCurso" name="formCurso" onsubmit="return crearCurso()" method="post" action="subirSql/sqlCurso.php?cualquier=anadir">
+    <form id="formCurso" name="formCurso" onsubmit="return crearCurso()" method="post" action="subirSQL/sqlCurso.php?cualquier=anadir">
         <table style="background-color: #F71806;">
             <tbody>
                 <tr class="form-group">
