@@ -42,7 +42,7 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
         $direccion = "../../../";
         include_once $direccion . "ajuste/favicon.php";
         ?>
-        
+
         <style>
             h1,
             h5 {
@@ -109,10 +109,13 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
                     <tr>
                         <th>ID</th>
                         <th>
-                            Nombre de Estudiante
+                            Nombre de Participante
                         </th>
                         <th>
-                            Cambiar Curso
+                            Cambiar Fecha
+                        </th>
+                        <th>
+                            Cambiar Taller
                         </th>
                     </tr>
                 </thead>
@@ -125,11 +128,15 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
                                     <th>" . $row['id'] . "</th>
                                     <th>" . $row['estudiante'] . "</th>
                                     <th>
-                                    <select name='editarCurso' id='editarCurso' class='form-select'>
-                                        <option value='vacio' selected>Antes: ".$row['cursos']."</option>";
-                                        include_once "selecciones/cursosSelectEditar.php";
-                            echo "</select>
+                                    <input type='date' id='cambiarFecha' name='cambiarFecha'
+                                     value=" . date("Y-m-d", strtotime($row['fecha'])) . " class='form-control'>
                                     </th>
+                                    <th>
+                                    <select name='editarCurso' id='editarCurso' class='form-select'>
+                                        <option value='" . $row['cursos'] . "' selected>Antes: " . $row['cursos'] . "</option>";
+                            include_once "selecciones/cursosSelectEditar.php";
+                            echo "</select>
+                                    </th>                                    
                                 </tr>";
                         }
                     }

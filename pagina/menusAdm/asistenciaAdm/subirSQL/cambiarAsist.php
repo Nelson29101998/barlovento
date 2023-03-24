@@ -13,8 +13,9 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
 
     $editarId = $_GET['cambiarId'];
     $sacarSelect = $_POST['editarCurso'];
+    $cambiarFecha = $_POST['cambiarFecha'];
 
-    $sql = "UPDATE asistencias SET cursos='".$sacarSelect."' WHERE id='".$editarId."'";
+    $sql = "UPDATE asistencias SET cursos='" . $sacarSelect . "', fecha='" . $cambiarFecha . "' WHERE id='" . $editarId . "'";
 ?>
 
     <!DOCTYPE html>
