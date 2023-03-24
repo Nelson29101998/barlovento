@@ -156,7 +156,7 @@
             }
         ?>
             <button type="button" class="btn btn-primary">
-                <i class="fas fa-users"></i> Editar Profesor y Cursos
+                <i class="fas fa-users"></i> Editar Facilitadores y Talleres
             </button>
             </a>
         <?php
