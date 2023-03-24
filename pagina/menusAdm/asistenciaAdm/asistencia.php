@@ -55,7 +55,7 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
                         <tr>
                             <th>
                                 <label for="cadaEstudiante" class="text-white">
-                                    <i class="fas fa-user"></i> Elige un Estudiante:
+                                    <i class="fas fa-user"></i> Elige un Participante:
                                 </label>
                                 <select name="cadaEstudiante" id="cadaEstudiante" class="form-select">
                                     <?php
@@ -117,7 +117,7 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
                         <tr>
                             <th colspan="2" class="text-center">
                                 <button type="submit" class="btn btn-success">
-                                    <i class="fas fa-user-plus"></i> Añadir alumnos
+                                    <i class="fas fa-user-plus"></i> Añadir Participante
                                 </button>
                             </th>
                         </tr>
@@ -165,8 +165,8 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
                         <tr style="background-color: #F71806;">
                             <th style="border: 1px solid black;">N*</th>
                             <th style="border: 1px solid black;">Editar</th>
-                            <th style="border: 1px solid black;">Nombre del estudiante</th>
-                            <th style="border: 1px solid black;">Cursos</th>
+                            <th style="border: 1px solid black;">Nombre del Participante</th>
+                            <th style="border: 1px solid black;">Talleres</th>
                             <th style="border: 1px solid black;">Fecha</th>
                             <th style="border: 1px solid black;">Asistencias acumuladas del mes</th>
                             <th style="border: 1px solid black;">Total Clases</th>
