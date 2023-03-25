@@ -2,7 +2,6 @@
     Header set Access-Control-Allow-Origin "*"
     Header set Access-Control-Allow-Methods "POST, GET, DELETE, PUT, PATCH, OPTIONS"
     Header set Access-Control-Allow-Headers "*"
-    Header set Access-Control-Max-Age "1728000"
     Header set Content-Length "0"
     Header set Content-Type "text/plain"
 </IfModule>
