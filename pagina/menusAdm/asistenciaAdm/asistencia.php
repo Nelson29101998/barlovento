@@ -129,6 +129,11 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
         <div class="container-fluid">
             <form id="formCursos" name="formCursos" onsubmit="return cursosAsistencia()" method="post" action="#">
                 <div class="input-group justify-content-center">
+                    <select name="verParticipante" id="verParticipante" class="custom-select">
+                        <?php
+                        include_once "selecciones/estdSelect2.php";
+                        ?>
+                    </select>
                     <select name="verCurso" id="verCurso" class="custom-select">
                         <?php
                         include_once "selecciones/cursosSelect.php";
@@ -142,16 +147,27 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
                 </div>
                 <br>
                 <?php
-                if (!empty($_POST['verCurso'])) {
-                    if ($_POST['verCurso'] == "todas") {
+                if (!empty($_POST['verCurso']) || !empty($_POST['verParticipante'])) {
+                    if ($_POST['verCurso'] == "todas" || $_POST['verParticipante'] == "todas") {
                         $revisarSQL = "SELECT * FROM asistencias";
                     } else {
-                        $revisarSQL = "SELECT * FROM asistencias WHERE cursos='" . $_POST['verCurso'] . "'";
+                        if ($_POST['verCurso'] != "vacio") {
+                            $revisarSQL = "SELECT * FROM asistencias WHERE cursos='" . $_POST['verCurso'] . "'";
 
-                        echo "
-                        <div class='text-center'>
-                            <h4>Ver Curso es: " . $_POST['verCurso'] . "</h4>
-                        </div>";
+                            echo "
+                            <div class='text-center'>
+                                <h4>Ver talleres es: " . $_POST['verCurso'] . "</h4>
+                            </div>";
+                        }
+
+                        if ($_POST['verParticipante'] != "vacio") {
+                            $revisarSQL = "SELECT * FROM asistencias WHERE estudiante='" . $_POST['verParticipante'] . "'";
+
+                            echo "
+                            <div class='text-center'>
+                                <h4>Ver participantes es: " . $_POST['verParticipante'] . "</h4>
+                            </div>";
+                        }
                     }
                 } else {
                     $revisarSQL = "SELECT * FROM asistencias";
@@ -301,8 +317,9 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
             }
 
             function cursosAsistencia() {
-                var faltaSelect = document.forms["formCursos"]["verCurso"].value;
-                if (faltaSelect == "vacio") {
+                var faltaSelectTaller = document.forms["formCursos"]["verCurso"].value;
+                var faltaSelectPart = document.forms["formCursos"]["verParticipante"].value;
+                if ((faltaSelectTaller == "vacio") && (faltaSelectPart == "vacio")) {
                     return false;
                 }
                 return true;
