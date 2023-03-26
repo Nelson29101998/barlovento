@@ -83,7 +83,7 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
         <div class="container">
             <div class="animate__animated animate__flipInX animate__delay-1s">
                 <div class="text-center">
-                    <h1>Lista de Estudiantes</h1>
+                    <h1>Listado de Participantes</h1>
                 </div>
             </div>
         </div>
@@ -130,7 +130,7 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
                         <th>N*</th>
                         <th>Editar</th>
                         <th>Rut</th>
-                        <th>Nombre</th>
+                        <th>Nombre de Participante</th>
                         <th>Contacto</th>
                         <th>Mail</th>
                     </tr>

@@ -43,13 +43,16 @@ $html = <<<EOD
     width: 60px
   }
   .tamanoNombre{
-    width: 160px
+    width: 135px
   }
   .tamanoContacto{
     width: 90px
   }
   .tamanoMail{
     width: 180px
+  }
+  .tamanoAnotar{
+    width: 70px
   }
 </style>
 <h3>Autor: $nomAutor</h3>
@@ -61,6 +64,7 @@ $html = <<<EOD
     <th class="tamanoNombre">Nombre</th>
     <th class="tamanoContacto">Contacto</th>
     <th class="tamanoMail">Mail</th>
+    <th class="tamanoAnotar">Anotar (O/X)</th>
 </tr>
 </thead>
 <tbody>
@@ -74,6 +78,7 @@ if (mysqli_num_rows($resultados) > 0) {
         <th class="tamanoNombre">$row[estudiante]</th>
         <th class="tamanoContacto">$row[telefono]</th>
         <th class="tamanoMail">$row[mail]</th>
+        <th class="tamanoAnotar"></th>
       </tr>
     EOD;
     }
@@ -121,4 +126,3 @@ $pdf->SetFont('helvetica', 'B', 10);
 $pdf->AddPage();
 $pdf->writeHTML($html, true, 0, true, true);
 $pdf->Output($titulo.'.pdf', 'I');
-?>
