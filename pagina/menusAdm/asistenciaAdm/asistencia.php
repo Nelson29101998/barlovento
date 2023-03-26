@@ -169,13 +169,14 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
                             <th style="border: 1px solid black;">Talleres</th>
                             <th style="border: 1px solid black;">Fecha</th>
                             <th style="border: 1px solid black;">Asistencias acumuladas del mes</th>
-                            <th style="border: 1px solid black;">Total Clases</th>
+                            <th style="border: 1px solid black;">Clases</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
                         $resultados = mysqli_query($conexion, $revisarSQL);
                         $sumTotal = 0;
+                        $totalesClases = 0;
                         if (mysqli_num_rows($resultados) > 0) {
                             while ($row = mysqli_fetch_array($resultados)) {
                                 $sumTotal = $sumTotal + 1;
@@ -237,9 +238,10 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
                                     <button type='button' id='borrarId' class='btn btn-danger'>
                                         <i class='fas fa-trash-can'></i>
                                     </button>
-                                    </a> 
+                                    </a>
                                     </th>
                                     </tr>";
+                                    $totalesClases = $totalesClases + (int)$row['total'];
                                     ?>
                                 </form>
                         <?php
@@ -253,6 +255,19 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
                         }
                         mysqli_free_result($resultados);
                         ?>
+                    </tbody>
+                </table>
+                <br>
+                <table>
+                    <tbody>
+                        <tr style="background-color: #F71806;">
+                            <th>Totales de las clases:</th>
+                            <th>
+                                <?php
+                                echo $totalesClases;
+                                ?>
+                            </th>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -272,6 +287,7 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
                     content: "Guardar Asistencia",
                 });
             }
+
             function creaAlumno() {
                 var elegirEstd = document.forms["formAddAlumno"]["cadaEstudiante"].value;
                 var sacarCurso = document.forms["formAddAlumno"]["sacarCurso1"].value;
@@ -283,6 +299,7 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
                 }
                 return true;
             }
+
             function cursosAsistencia() {
                 var faltaSelect = document.forms["formCursos"]["verCurso"].value;
                 if (faltaSelect == "vacio") {
