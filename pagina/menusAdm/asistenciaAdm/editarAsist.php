@@ -146,7 +146,7 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
             </table>
             <br>
             <div class="text-center">
-                <a href='javascript:history.back()'>
+                <a href='asistencia.php'>
                     <button type='button' class='btn btn-danger'>
                         <i class="fas fa-xmark"></i> Cancelar
                     </button>

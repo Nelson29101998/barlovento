@@ -151,22 +151,34 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
                     if ($_POST['verCurso'] == "todas" || $_POST['verParticipante'] == "todas") {
                         $revisarSQL = "SELECT * FROM asistencias";
                     } else {
-                        if ($_POST['verCurso'] != "vacio") {
-                            $revisarSQL = "SELECT * FROM asistencias WHERE cursos='" . $_POST['verCurso'] . "'";
+                        if ($_POST['verCurso'] != "vacio" && $_POST['verParticipante'] != "vacio") {
+                            $revisarSQL = "SELECT * FROM asistencias WHERE cursos='" . $_POST['verCurso'] . "' AND estudiante='" . $_POST['verParticipante'] . "'";
 
                             echo "
-                            <div class='text-center'>
-                                <h4>Ver talleres es: " . $_POST['verCurso'] . "</h4>
-                            </div>";
-                        }
+                                <div class='text-center'>
+                                    <h4>Ver talleres es: " . $_POST['verCurso'] . "</h4>
+                                    <h4>Ver participantes es: " . $_POST['verParticipante'] . "</h4>
 
-                        if ($_POST['verParticipante'] != "vacio") {
-                            $revisarSQL = "SELECT * FROM asistencias WHERE estudiante='" . $_POST['verParticipante'] . "'";
+                                </div>";
 
-                            echo "
-                            <div class='text-center'>
-                                <h4>Ver participantes es: " . $_POST['verParticipante'] . "</h4>
-                            </div>";
+                        } else {
+                            if ($_POST['verCurso'] != "vacio") {
+                                $revisarSQL = "SELECT * FROM asistencias WHERE cursos='" . $_POST['verCurso'] . "'";
+
+                                echo "
+                                <div class='text-center'>
+                                    <h4>Ver talleres es: " . $_POST['verCurso'] . "</h4>
+                                </div>";
+                            }
+
+                            if ($_POST['verParticipante'] != "vacio") {
+                                $revisarSQL = "SELECT * FROM asistencias WHERE estudiante='" . $_POST['verParticipante'] . "'";
+
+                                echo "
+                                <div class='text-center'>
+                                    <h4>Ver participantes es: " . $_POST['verParticipante'] . "</h4>
+                                </div>";
+                            }
                         }
                     }
                 } else {
