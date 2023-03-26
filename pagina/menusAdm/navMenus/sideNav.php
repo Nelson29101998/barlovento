@@ -174,7 +174,7 @@
             }
         ?>
             <button type="button" class="btn btn-primary">
-                <i class="fas fa-list-check"></i> La lista de Estudiante
+                <i class="fas fa-list-check"></i> Listado de Participante
             </button>
             </a>
         <?php
