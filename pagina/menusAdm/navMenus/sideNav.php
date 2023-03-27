@@ -78,7 +78,7 @@
     }
 
     .btn{
-        font-size: 19px;
+        /* font-size: 19px; */
         font-weight: bolder;
     }
 </style>
