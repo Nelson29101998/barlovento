@@ -2,7 +2,7 @@
 include_once "../../ajuste/config.php";
 session_start();
 if (count($_COOKIE) > 0 && (!empty($_COOKIE['nameCookieProf'])
- || !empty($_COOKIE['userCookieProf']) || !empty($_COOKIE['rutCookieProf']))) {
+    || !empty($_COOKIE['userCookieProf']) || !empty($_COOKIE['rutCookieProf']))) {
     //*Nombre
     $_SESSION['nombre'] = $_COOKIE['nameCookieProf'];
 
@@ -32,7 +32,7 @@ if (count($_COOKIE) > 0 && (!empty($_COOKIE['nameCookieProf'])
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
         <title>Profesor</title>
-        
+
         <?php
         //! Favicon
         $direccion = "../../";
@@ -91,6 +91,11 @@ if (count($_COOKIE) > 0 && (!empty($_COOKIE['nameCookieProf'])
                                     <th>
                                         <input type="password" class="form-control" name="contrs" id="contrs" placeholder="Ingresa en la conteaseña">
                                     </th>
+                                    <th>
+                                        <div class="form-check text-white">
+                                            <input type="checkbox" class="form-check-input" onclick="mostrarContrs()">Mostrar contraseña
+                                        </div>
+                                    </th>
                                 </tr>
                             </tbody>
                         </table>
@@ -127,6 +132,15 @@ if (count($_COOKIE) > 0 && (!empty($_COOKIE['nameCookieProf'])
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="../../disenoMejor/bootstrap/js/bootstrap.bundle.min.js"></script>
         <script>
+            function mostrarContrs() {
+                var x = document.getElementById("contrs");
+                if (x.type === "password") {
+                    x.type = "text";
+                } else {
+                    x.type = "password";
+                }
+            }
+
             function volverPag(event) {
                 if ('referrer' in document) {
                     window.location = document.referrer;
