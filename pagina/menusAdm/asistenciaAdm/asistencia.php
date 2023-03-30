@@ -26,6 +26,7 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
         <link rel="stylesheet" href="../../../disenoMejor/MDBootstrap/css/mdb.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
         <title>Asistencia</title>
+        <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
         <?php
         //! Favicon
         $direccion = "../../../";
@@ -160,7 +161,6 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
                                     <h4>Ver participantes es: " . $_POST['verParticipante'] . "</h4>
 
                                 </div>";
-
                         } else {
                             if ($_POST['verCurso'] != "vacio") {
                                 $revisarSQL = "SELECT * FROM asistencias WHERE cursos='" . $_POST['verCurso'] . "'";
@@ -188,7 +188,7 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
             </form>
 
             <div class="animate__animated animate__backInLeft">
-                <table>
+                <table id="tablaBarlovento">
                     <thead>
                         <tr style="background-color: #F71806;">
                             <th style="border: 1px solid black;">N*</th>
@@ -298,6 +298,12 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
                         </tr>
                     </tbody>
                 </table>
+                <br>
+                <div style="text-align:center;">
+                    <button type="button" class="btn btn-success" onclick="ExportToExcel('xlsx')">
+                        Exporta de Excel <i class="fas fa-file-csv"></i>
+                    </button>
+                </div>
             </div>
         </div>
         <br>
@@ -335,6 +341,20 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
                     return false;
                 }
                 return true;
+            }
+
+            function ExportToExcel(type, fn, dl) {
+                var elt = document.getElementById('tablaBarlovento');
+                var wb = XLSX.utils.table_to_book(elt, {
+                    sheet: "sheet1"
+                });
+                return dl ?
+                    XLSX.write(wb, {
+                        bookType: type,
+                        bookSST: true,
+                        type: 'base64'
+                    }) :
+                    XLSX.writeFile(wb, fn || ('MySheetName.' + (type || 'xlsx')));
             }
         </script>
     </body>
