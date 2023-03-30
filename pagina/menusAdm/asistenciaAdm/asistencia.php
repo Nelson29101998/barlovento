@@ -301,7 +301,7 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
                 <br>
                 <div style="text-align:center;">
                     <button type="button" class="btn btn-success" onclick="ExportToExcel('xlsx')">
-                        Exporta de Excel <i class="fas fa-file-csv"></i>
+                        Exporta de Excel  <i class="fas fa-file-csv fa-fw fa-2xl"></i>
                     </button>
                 </div>
             </div>
