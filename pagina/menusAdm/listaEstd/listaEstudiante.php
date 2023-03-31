@@ -30,6 +30,7 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
         <title>Lista de Estudiantes</title>
+        <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
 
         <?php
         //! Favicon
@@ -90,11 +91,13 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
 
         <form id="formCursos" name="formCursos" onsubmit="return cursosAsistencia()" method="post" action="">
             <div class="input-group justify-content-center">
-                <select name="verCurso" id="verCurso" class="custom-select">
-                    <?php
-                    include_once "cursosSelect.php";
-                    ?>
-                </select>
+                <div class="col-auto">
+                    <select name="verCurso" id="verCurso" class="form-select">
+                        <?php
+                        include_once "cursosSelect.php";
+                        ?>
+                    </select>
+                </div>
                 <div class="input-group-append">
                     <button type="submit" class="btn btn-primary">
                         <i class="fas fa-magnifying-glass"></i> Buscar
@@ -124,7 +127,7 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
         </form>
 
         <div class="animate__animated animate__backInLeft">
-            <table style="background-color: #F71806;">
+            <table style="background-color: #F71806;" id="tablaBarlovento">
                 <thead>
                     <tr>
                         <th>N*</th>
@@ -211,8 +214,11 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
             <br>
 
             <div class="text-center animate__animated animate__bounceIn animate__delay-1s">
+                <button type="button" class="btn btn-success" onclick="ExportToExcel('xlsx')">
+                    <i class="fas fa-file-csv fa-2xl"></i> Exporta de Excel
+                </button>
                 <button type="submit" class="btn btn-danger">
-                    <i class="fas fa-file-pdf" style="font-size: 18px;"></i> Descargar un PDF
+                    <i class="fas fa-file-pdf fa-2xl" ></i> Descargar un PDF
                 </button>
             </div>
         </form>
@@ -222,6 +228,20 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
         <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
         <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css" />
         <script>
+            function ExportToExcel(type, fn, dl) {
+                var elt = document.getElementById('tablaBarlovento');
+                var wb = XLSX.utils.table_to_book(elt, {
+                    sheet: "sheet1"
+                });
+                return dl ?
+                    XLSX.write(wb, {
+                        bookType: type,
+                        bookSST: true,
+                        type: 'base64'
+                    }) :
+                    XLSX.writeFile(wb, fn || ('MySheetName.' + (type || 'xlsx')));
+            }
+
             function cursosAsistencia() {
                 return true;
             }
