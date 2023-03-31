@@ -130,16 +130,21 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
         <div class="container-fluid">
             <form id="formCursos" name="formCursos" onsubmit="return cursosAsistencia()" method="post" action="#">
                 <div class="input-group justify-content-center">
-                    <select name="verParticipante" id="verParticipante" class="custom-select">
-                        <?php
-                        include_once "selecciones/estdSelect2.php";
-                        ?>
-                    </select>
-                    <select name="verCurso" id="verCurso" class="custom-select">
-                        <?php
-                        include_once "selecciones/cursosSelect.php";
-                        ?>
-                    </select>
+                    <div class="col-auto">
+                        <select name="verParticipante" id="verParticipante" class="form-select">
+                            <?php
+                            include_once "selecciones/estdSelect2.php";
+                            ?>
+                        </select>
+                    </div>
+                    <div class="col-auto">
+                        <select name="verCurso" id="verCurso" class="form-select">
+                            <?php
+                            include_once "selecciones/cursosSelect.php";
+                            ?>
+                        </select>
+                    </div>
+
                     <div class="input-group-append">
                         <button type="submit" class="btn btn-primary">
                             <i class="fas fa-magnifying-glass"></i> Buscar
@@ -301,7 +306,7 @@ if (!isset($_SESSION["usuario"]) && !isset($_SESSION["rut"])) {
                 <br>
                 <div style="text-align:center;">
                     <button type="button" class="btn btn-success" onclick="ExportToExcel('xlsx')">
-                        Exporta de Excel  <i class="fas fa-file-csv fa-fw fa-2xl"></i>
+                        Exporta de Excel <i class="fas fa-file-csv fa-fw fa-2xl"></i>
                     </button>
                 </div>
             </div>
